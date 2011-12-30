@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+   "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean class="org.scoutant.tvcenter.command.Init">
+		<property name="event" value="start" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Start">
+		<property name="event" value="start" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Stop">
+		<property name="event" value="stop" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.KeyPressed">
+		<property name="event" value="keypressed" />
+	</bean>
+	<!-- <bean class="org.scoutant.tvcenter.command.MsgEntered"> <property name="event" 
+		value="keypressed" /> </bean> -->
+</beans>
