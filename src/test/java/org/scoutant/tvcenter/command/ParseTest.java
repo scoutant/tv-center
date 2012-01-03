@@ -9,7 +9,7 @@ import javax.xml.parsers.SAXParserFactory;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.scoutant.tvcenter.io.ProgramHandler;
+import org.scoutant.tvcenter.io.GuideHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
@@ -42,7 +42,7 @@ public class ParseTest {
 //    	factory.setValidating(false);
     	SAXParser saxParser = factory.newSAXParser();
     	
-    	DefaultHandler handler = new ProgramHandler();
+    	DefaultHandler handler = new GuideHandler();
 
     	saxParser.parse( file, handler );
     	
