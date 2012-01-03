@@ -1,0 +1,17 @@
+Multiplatforme TV Guide that enables program recording and playing. GUI a la Windows Media Center. Sourcing XMLTV data and targetting VLC player. To be used with a remote controller.
+
+A port of tv-rec-play (ActionScript) to Java 7.
+Targetting a 1-second launch even with an XML tv guide for several days and over 50 channels.
+Using a SAX parsing approach.
+
+
+You can reuse and adapt it according to GPL v3 license.
+
+Stephane Coutant, http://scoutant.org
+
+-----------
+
+Changelog :
+
+1.0, 2012
+First release

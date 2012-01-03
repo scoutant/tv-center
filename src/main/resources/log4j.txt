@@ -1,0 +1,7 @@
+#Grails' Log4j Configuration
+#Mon Dec 17 10:37:15 CET 2007
+log4j.appender.stdout=org.apache.log4j.ConsoleAppender
+log4j.appender.stdout.layout.ConversionPattern=[%r] %c{2} %m%n
+log4j.appender.errors.layout=org.apache.log4j.PatternLayout
+log4j.rootLogger=stdout
+log4j.logger.org.scoutant=DEBUG
