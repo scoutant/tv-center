@@ -31,4 +31,9 @@ public class Guide {
 	}
 	
 	
+	public Channel channel(int index) {
+		return channels.get(index);
+	}
+	
+	
 }

@@ -12,6 +12,7 @@ import org.scoutant.mvc.ActionDispath;
 import org.scoutant.mvc.Command;
 import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
+import org.scoutant.tvcenter.model.Model;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -24,6 +25,13 @@ public class App extends JFrame {
 			_context = new ClassPathXmlApplicationContext("context.xml");
 		}
 		return _context;
+	}
+	private static Model _model = null;
+	public static Model model() {
+		if (_model==null) {
+			_model = new Model();
+		}
+		return _model;
 	}
 	
 	public void quit() {

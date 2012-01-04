@@ -2,9 +2,11 @@ package org.scoutant.mvc;
 
 import java.util.Map;
 
+import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
 
 public class EventWith<T> extends Event {
+	private static final Logger log = Logger.getLogger( EventWith.class);
 	private T t;
 	public EventWith(String name, T value) {
 		super(name);
@@ -20,7 +22,11 @@ public class EventWith<T> extends Event {
 			if ( name.equals(c.getEvent())) {
 				System.out.println( "command : " + c.getClass().getName());
 				// here we may run a ClassCastException, but overkill to check with generics...
-				c.execute( this.t);
+				try {
+					c.execute( this.t);
+				} catch (Exception e) {
+					log.error("Could not invoque command " + c, e);
+				}
 			}
 		}
 	}

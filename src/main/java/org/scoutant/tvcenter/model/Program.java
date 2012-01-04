@@ -1,7 +1,9 @@
 package org.scoutant.tvcenter.model;
 
 import java.io.Serializable;
+import java.text.ParseException;
 
+import org.scoutant.tvcenter.utils.DateUtils;
 import org.xml.sax.Attributes;
 
 public class Program implements Serializable {
@@ -9,15 +11,17 @@ public class Program implements Serializable {
 	
 	public Program(){
 	}
-	public Program(Attributes atts){
+	public Program(Attributes atts) throws ParseException{
 		this();
-		start = atts.getValue("start");
-		stop = atts.getValue("stop");
+		start = DateUtils.parse( atts.getValue("start"));
+		stop = DateUtils.parse( atts.getValue("stop"));
 		channel = atts.getValue("channel");
 	}
 	
-	public String start; 
-	public String stop;
+//	public String start; 
+//	public String stop;
+	public long start; 
+	public long stop;
 	public String channel;
 	public String title;
 	public String subtitle;
