@@ -2,54 +2,6 @@
 <!DOCTYPE tv SYSTEM "xmltv.dtd">
 
 <tv source-info-url="http://telepoche.guidetele.com/" source-data-url="http://telepoche.guidetele.com/" generator-info-name="XMLTV" generator-info-url="http://membled.com/work/apps/xmltv/">
-  <channel id="C1.telepoche.com">
-    <display-name>TF1</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/tf1.gif" />
-  </channel>
-  <channel id="C2.telepoche.com">
-    <display-name>France 2</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/france2.gif" />
-  </channel>
-  <channel id="C3.telepoche.com">
-    <display-name>France 3</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/france3.gif" />
-  </channel>
-  <channel id="C4.telepoche.com">
-    <display-name>Canal +</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/canalplus.gif" />
-  </channel>
-  <channel id="C5.telepoche.com">
-    <display-name>Arte</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/arte.gif" />
-  </channel>
-  <channel id="C6.telepoche.com">
-    <display-name>M 6</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/m6_logo.gif" />
-  </channel>
-  <channel id="C7.telepoche.com">
-    <display-name>France 5</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/france5.gif" />
-  </channel>
-  <channel id="C8.telepoche.com">
-    <display-name>RTL 9</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/rtl9.png" />
-  </channel>
-  <channel id="C9.telepoche.com">
-    <display-name>TMC</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/new_tmc.png" />
-  </channel>
-  <channel id="C169.telepoche.com">
-    <display-name>NRJ 12</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/nrj_12.gif" />
-  </channel>
-  <channel id="C193.telepoche.com">
-    <display-name>Virgin 17</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/virgin.png" />
-  </channel>
-  <channel id="C194.telepoche.com">
-    <display-name>BFM TV</display-name>
-    <icon src="http://telepoche.guidetele.com/medias/chaines/bfm.png" />
-  </channel>
   <channel id="C195.telepoche.com">
     <display-name>Gulli</display-name>
     <icon src="http://telepoche.guidetele.com/medias/chaines/gulli.png" />

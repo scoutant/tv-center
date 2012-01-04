@@ -37,7 +37,7 @@ public class GuideHandler extends DefaultHandler {
 		log.info("Start document");
 	}
 	public void endDocument () {
-		log.debug("# programs " + guide);
+		log.debug("# programs " + App.model().guide);
 		p = null;
 		log.info("End document");
 	}
