@@ -2,6 +2,29 @@
 <!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
    "http://www.springframework.org/dtd/spring-beans.dtd">
 <beans>
+	<bean class="org.scoutant.tvcenter.command.Down">
+		<property name="event" value="down" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Up">
+		<property name="event" value="up" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Left">
+		<property name="event" value="left" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Right">
+		<property name="event" value="right" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.ParseGuide">
+		<property name="event" value="parse" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.Refresh">
+		<property name="event" value="refresh" />
+	</bean>
+
+	<bean class="org.scoutant.tvcenter.command.InitCursor">
+		<property name="event" value="init" />
+	</bean>
+
 	<bean class="org.scoutant.tvcenter.command.Init">
 		<property name="event" value="start" />
 	</bean>

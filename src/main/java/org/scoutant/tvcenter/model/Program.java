@@ -33,9 +33,9 @@ public class Program implements Serializable {
 	@Override
 	public String toString() {
 		String str = "Program [ ";
-		str += "start=" + start + ", stop=" + stop + ", channel="
-				+ channel + ", title=" + title + ", subtitle=" + subtitle
-				+ ", credits=" + credits + ", year=" + year ;
+		str += "start=" + DateUtils.format( start);
+		str += ", stop=" + DateUtils.format( stop); 
+		str += ", channel=" + channel + ", title=" + title + ", subtitle=" + subtitle + ", credits=" + credits + ", year=" + year ;
 		str += ", title : " + title;
 		str += ", subtitle : " + subtitle;
 		str += ", desc: " + desc;

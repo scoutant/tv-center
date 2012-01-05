@@ -15,7 +15,12 @@ public class DateUtils {
 	 * @return corresponding time, not in milliseconds but in minutes, origin at 1970/01/01
 	 */
 	public static long parse(String s) throws ParseException {
-		Date date = df.parse(s);
-		return date.getTime()/1000/60;
+		return df.parse(s).getTime()/1000/60;
+	}
+	
+	
+	private static final DateFormat df2 = new SimpleDateFormat("MM/dd-HH:mm");
+	public static String format(long l) {
+		return df2.format( new Date(l*60*1000));
 	}
 }

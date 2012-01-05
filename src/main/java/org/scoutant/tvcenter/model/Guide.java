@@ -16,7 +16,7 @@ public class Guide {
 	
 	@Override 
 	public String toString() {
-		String str="";
+		String str="index : " + index +"\n";
 		for (Channel c : channels) {
 			str += c + "\n";
 		}
@@ -31,8 +31,30 @@ public class Guide {
 	}
 	
 	
-	public Channel channel(int index) {
+	public Channel channel(int p) {
+		return channels.get( p);
+	}
+	
+	public Channel channel() {
 		return channels.get(index);
+	}
+	
+	private int index;
+
+	public boolean down(){
+		if (index>= channels.size()-1) return false;
+		index++;
+		return true;
+	}
+	public boolean up(){
+		if (index<=0 ) return false;
+		index--;
+		return true;
+	}
+
+	public void init() {
+		index=0;
+		channel().init();
 	}
 	
 	

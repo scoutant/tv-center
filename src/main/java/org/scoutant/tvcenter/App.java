@@ -1,15 +1,12 @@
 package org.scoutant.tvcenter;
 
-import static org.junit.Assert.assertTrue;
-
-import java.awt.BorderLayout;
 import java.io.IOException;
+import java.io.InputStream;
 
-import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
-import org.scoutant.tvcenter.command.ParseGuide;
+import org.scoutant.mvc.Event;
+import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Model;
 import org.scoutant.tvcenter.view.GuideView;
@@ -34,6 +31,12 @@ public class App extends JFrame {
 		}
 		return _model;
 	}
+	private static App _app = null;
+	public static App app(){
+		return _app;
+	}
+	private GuideView panel;
+	
 	
 	public void quit() {
 	}
@@ -43,10 +46,10 @@ public class App extends JFrame {
 		context();
 
     	Resource res = context().getResource("tv2.xml");
-    	new ParseGuide().execute( res.getInputStream());
-		
+    	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
+		new Event("init").dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		JPanel panel = new GuideView();
+		panel = new GuideView();
 		this.add( panel);
 //		this.add( panel,  BorderLayout.PAGE_START);
 //		add( new GuideView(), BorderLayout.PAGE_END);
@@ -56,9 +59,16 @@ public class App extends JFrame {
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);
     	setVisible(true);
+    	
+	}
+	
+	public void refreh(){
+		panel.repaint();
+		panel.updateUI();
+		panel.validate();
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {
-    	new App();
+    	_app = new App();
     }	
 }

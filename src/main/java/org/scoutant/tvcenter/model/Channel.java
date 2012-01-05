@@ -18,6 +18,8 @@ public class Channel {
 	public List<Program> programs = new ArrayList<Program>();
 	public String name;
 	public String icon;
+
+	private int index;
 	
 	public Channel(Attributes atts) {
 		this.id = atts.getValue("id");
@@ -30,14 +32,31 @@ public class Channel {
 	
 	@Override
 	public String toString() {
-		String str =  "Channel [ id=" + id + ", name=" + name + ", icon=" + icon ;
+		String str = "index : " + index +" ----- ";  
+		str += "Channel [ id=" + id + ", name=" + name + ", icon=" + icon ;
 		str += ", # programs : " + programs.size();
 		return str + "]";
 	}
 
+	public boolean left(){
+		if (index<=0) return false;
+		index--;
+		return true;
+	}
 
+	public boolean right(){
+		if (index>=programs.size()-1) return false;
+		index++;
+		return true;
+	}
+	
+	public Program program(){
+		return programs.get(index);
+	}
+
+	public void init() {
+		// TODO adjust against current time
+		index=0;
+	}
 }
 
-
-/*
-*/

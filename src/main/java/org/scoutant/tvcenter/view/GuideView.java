@@ -1,5 +1,8 @@
 package org.scoutant.tvcenter.view;
 
+import java.awt.Graphics;
+import java.nio.channels.Channels;
+
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -17,9 +20,26 @@ public class GuideView extends JPanel {
 	private static final Logger log = Logger.getLogger( GuideView.class);
 	private Guide guide;
 	
+	@Override
+	public void revalidate() {
+		super.revalidate();
+		log.debug("revalidating...");
+	}
+	@Override
+	public void repaint() {
+		super.repaint();
+		log.debug("repaintng...");
+	}
+	@Override
+	public void update(Graphics g) {
+		super.update(g);
+		log.debug("updating...");
+	}
+	
 	public GuideView() {
 		super();
     	setLayout(null);
+    	setSize(1000 , 800	);
 
 //    	JButton b = new JButton("start");
 //    	b.addActionListener( new ActionDispath( "start"));
@@ -43,25 +63,13 @@ public class GuideView extends JPanel {
 //		}
 
 		guide = App.model().guide;
-		int i=0;
-		for(Program p : guide.channel(0).programs) {
-			log.debug("prog " + p);
-			add( new ProgramWidget( p, 0+200*i, 10));
-			i++;
+		
+		
+		for (int i=0; i<guide.channels.size(); i++){
+			ChannelView cv = new ChannelView(guide.channel(i));
+			cv.setBounds(0, i*60, getWidth(), 50);
+			add( cv);
 		}
 		
-		
 	}
-
-	
-//	private class Item extends JButton {
-//		public Item(String label) {
-//			super(label);
-//			this.addKeyListener( new KeyPressed());
-//		}
-//		public Item(String label, int x,int y) {
-//			this(label);
-//			setBounds( x, y, 150, 50);
-//		}
-//	}
 }
