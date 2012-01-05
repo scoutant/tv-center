@@ -18,12 +18,10 @@ public class Event {
 		return "Event : " + this.name;
 	}
 	public void dispatch() {
-//		System.out.println("dispathing from : " + this);
 		Map<String, Command> commands = App.context().getBeansOfType( Command.class);
 		if (commands==null ) return;
 		for (Command c :  commands.values()) {
 			if ( name.equals(c.getEvent())) {
-//				System.out.println( "command : " + c.getClass().getName());
 				c.execute();
 			}
 		}

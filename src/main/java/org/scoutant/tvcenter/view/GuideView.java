@@ -1,24 +1,27 @@
 package org.scoutant.tvcenter.view;
 
 import java.awt.Graphics;
-import java.nio.channels.Channels;
+import java.util.ArrayList;
+import java.util.List;
 
-import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Guide;
-import org.scoutant.tvcenter.model.Program;
 
-public class GuideView extends JPanel {
+public class GuideView extends JPanel implements ChangeListener{
 
 	private static final long serialVersionUID = 7966178905763354703L;
 	/** pixels representing 1 minute */ 
 	public static final int MINUTE = 8;
 	private static final Logger log = Logger.getLogger( GuideView.class);
 	private Guide guide;
+	private List<ChannelView> views = new ArrayList<ChannelView>();
 	
 	@Override
 	public void revalidate() {
@@ -58,18 +61,26 @@ public class GuideView extends JPanel {
     	this.setFocusable(true);
 		this.addKeyListener( new KeyPressed());
 
+		
 //		for(int i=0; i<10;i++){
 //			add( new Item("coucou", 250, 80+i*60));
 //		}
 
 		guide = App.model().guide;
-		
+		guide.addListener(this);
 		
 		for (int i=0; i<guide.channels.size(); i++){
 			ChannelView cv = new ChannelView(guide.channel(i));
 			cv.setBounds(0, i*60, getWidth(), 50);
 			add( cv);
+			views.add(cv);
 		}
-		
+	}
+	
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		for (ChannelView c : views) {
+			c.refresh();
+		}
 	}
 }

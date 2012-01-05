@@ -1,7 +1,12 @@
 package org.scoutant.tvcenter.model;
 
+import java.awt.event.ActionListener;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.xml.sax.Attributes;
 
@@ -12,8 +17,9 @@ import org.xml.sax.Attributes;
  *  <icon src="http://telepoche.guidetele.com/medias/chaines/tf1.gif" />
  * </channel>
  */
-public class Channel {
+public class Channel implements Serializable {
 	
+	private static final long serialVersionUID = 9126743732976715575L;
 	public String id;
 	public List<Program> programs = new ArrayList<Program>();
 	public String name;
@@ -41,12 +47,14 @@ public class Channel {
 	public boolean left(){
 		if (index<=0) return false;
 		index--;
+		fireEvent();
 		return true;
 	}
 
 	public boolean right(){
 		if (index>=programs.size()-1) return false;
 		index++;
+		fireEvent();
 		return true;
 	}
 	
@@ -57,6 +65,18 @@ public class Channel {
 	public void init() {
 		// TODO adjust against current time
 		index=0;
+		fireEvent();
 	}
+
+	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	public void addListener(ChangeListener l) {
+		listeners.add( l);
+	}
+	private void fireEvent(){
+		for(ChangeListener l : listeners) {
+			l.stateChanged( new ChangeEvent(this));
+		}
+	}
+	
 }
 

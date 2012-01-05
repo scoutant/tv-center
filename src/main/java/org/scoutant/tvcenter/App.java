@@ -35,7 +35,7 @@ public class App extends JFrame {
 	public static App app(){
 		return _app;
 	}
-	private GuideView panel;
+	public GuideView guide;
 	
 	
 	public void quit() {
@@ -47,25 +47,20 @@ public class App extends JFrame {
 
     	Resource res = context().getResource("tv2.xml");
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
-		new Event("init").dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
-		panel = new GuideView();
-		this.add( panel);
+		guide = new GuideView();
+		this.add( guide);
 //		this.add( panel,  BorderLayout.PAGE_START);
 //		add( new GuideView(), BorderLayout.PAGE_END);
+		
+		new Event("init").dispatch();
+		
 		
 		this.addKeyListener( new KeyPressed());
     	setSize(1000, 800);
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);
     	setVisible(true);
-    	
-	}
-	
-	public void refreh(){
-		panel.repaint();
-		panel.updateUI();
-		panel.validate();
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {

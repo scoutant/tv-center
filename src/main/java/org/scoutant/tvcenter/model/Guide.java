@@ -3,6 +3,9 @@ package org.scoutant.tvcenter.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 /**
  * the TV Guide is a collection of Tv programs organized by channel
  */
@@ -44,11 +47,13 @@ public class Guide {
 	public boolean down(){
 		if (index>= channels.size()-1) return false;
 		index++;
+		fireEvent();
 		return true;
 	}
 	public boolean up(){
 		if (index<=0 ) return false;
 		index--;
+		fireEvent();
 		return true;
 	}
 
@@ -57,5 +62,14 @@ public class Guide {
 		channel().init();
 	}
 	
+	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	public void addListener(ChangeListener l) {
+		listeners.add( l);
+	}
+	private void fireEvent(){
+		for(ChangeListener l : listeners) {
+			l.stateChanged( new ChangeEvent(this));
+		}
+	}
 	
 }
