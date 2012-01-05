@@ -8,6 +8,7 @@ import java.util.List;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import org.scoutant.tvcenter.App;
 import org.xml.sax.Attributes;
 
 /**
@@ -63,10 +64,18 @@ public class Channel implements Serializable {
 	}
 
 	public void init() {
-		// TODO adjust against current time
-		index=0;
+		index=indexNow();
 		fireEvent();
 	}
+	
+	private int indexNow(){
+		for (int i=0; i<programs.size(); i++) {
+			if (programs.get(i).stop>App.model().now) return i; 
+		}
+		return 0;
+	}
+	
+	
 
 	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
 	public void addListener(ChangeListener l) {

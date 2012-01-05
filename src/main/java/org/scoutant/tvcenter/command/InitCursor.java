@@ -13,7 +13,6 @@ public class InitCursor extends BaseCommand implements Command {
 	public void execute() {
 		// TODO position cursor against current time...
 		
-		App.model().now = (int) (new Date().getTime()/1000/60);
 		
 		guide.init();
 		new Event("refresh").dispatch();

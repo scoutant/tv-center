@@ -36,8 +36,8 @@ public class ChannelView extends JPanel implements ChangeListener{
 
 		int i=0;
 		for(Program p : channel.programs) {
-			ProgramWidget pw = new ProgramWidget( p, 0+200*i, 10);
-//			ProgramWidget pw = new ProgramWidget( p);
+//			ProgramWidget pw = new ProgramWidget( p, 0+200*i, 10);
+			ProgramWidget pw = new ProgramWidget( p);
 			add( pw);
 			views.add(pw);
 			i++;

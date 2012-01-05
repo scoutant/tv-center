@@ -2,6 +2,7 @@ package org.scoutant.tvcenter;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Date;
 
 import javax.swing.JFrame;
 
@@ -46,6 +47,9 @@ public class App extends JFrame {
     	Resource res = context().getResource("tv2.xml");
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
+    	
+		App.model().now = (int) (new Date().getTime()/1000/60);
+
 		guide = new GuideView();
 		this.add( guide);
 //		this.add( panel,  BorderLayout.PAGE_START);
