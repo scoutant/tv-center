@@ -11,18 +11,20 @@ import org.scoutant.tvcenter.model.Program;
 public class ProgramWidget extends JButton {
 	private static final long serialVersionUID = 9140793430723109422L;
 	public static final Logger log = Logger.getLogger(ProgramWidget.class);
+	public static final int MINUTE = 8;
 	private Program program;
-	public ProgramWidget(String label) {
-		super(label);
-		setFocusable(false);
-	}
-	public ProgramWidget(String label, int x,int y) {
-		this(label);
-		setBounds( x, y, 180, 30);
-	}
 	public ProgramWidget(Program p, int x,int y) {
-		this( p.title, x, y);
+		super(p.title);
 		this.program = p;
+		int width = (int) ((program.stop-program.start)*MINUTE);
+		setBounds(x, y, width, 30);
+	}
+
+	public ProgramWidget(Program p) {
+		super(p.title);
+		this.program = p;
+		int width = (int) ((program.stop-program.start)*MINUTE);
+		setBounds( (p.start-App.model().now)*MINUTE, 10, width, 30);
 	}
 	
 	@Override

@@ -20,8 +20,8 @@ public class Program implements Serializable {
 	
 //	public String start; 
 //	public String stop;
-	public long start; 
-	public long stop;
+	public int start; 
+	public int stop;
 	public String channel;
 	public String title;
 	public String subtitle;

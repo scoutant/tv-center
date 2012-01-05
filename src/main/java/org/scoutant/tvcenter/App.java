@@ -43,8 +43,6 @@ public class App extends JFrame {
 	
 	public App() throws IOException, Exception {
 		super();
-		context();
-
     	Resource res = context().getResource("tv2.xml");
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
@@ -55,8 +53,8 @@ public class App extends JFrame {
 		
 		new Event("init").dispatch();
 		
-		
 		this.addKeyListener( new KeyPressed());
+		
     	setSize(1000, 800);
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);

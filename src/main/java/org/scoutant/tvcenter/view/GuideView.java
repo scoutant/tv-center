@@ -18,7 +18,6 @@ public class GuideView extends JPanel implements ChangeListener{
 
 	private static final long serialVersionUID = 7966178905763354703L;
 	/** pixels representing 1 minute */ 
-	public static final int MINUTE = 8;
 	private static final Logger log = Logger.getLogger( GuideView.class);
 	private Guide guide;
 	private List<ChannelView> views = new ArrayList<ChannelView>();

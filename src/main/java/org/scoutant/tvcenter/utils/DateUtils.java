@@ -14,8 +14,8 @@ public class DateUtils {
 	 * @param date with format : 20100110175500 +0100
 	 * @return corresponding time, not in milliseconds but in minutes, origin at 1970/01/01
 	 */
-	public static long parse(String s) throws ParseException {
-		return df.parse(s).getTime()/1000/60;
+	public static int parse(String s) throws ParseException {
+		return (int) (df.parse(s).getTime()/1000/60);
 	}
 	
 	
