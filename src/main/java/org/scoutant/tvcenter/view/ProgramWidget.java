@@ -3,11 +3,8 @@ package org.scoutant.tvcenter.view;
 import java.awt.Color;
 
 import javax.swing.JButton;
-import javax.swing.border.BevelBorder;
 import javax.swing.border.Border;
-import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
-import javax.swing.border.SoftBevelBorder;
 
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
@@ -33,12 +30,14 @@ public class ProgramWidget extends JButton {
 		this.program = p;
 		int width = (int) ((program.stop-program.start)*MINUTE -2*PADDING);
 		setBounds( (p.start-App.model().now)*MINUTE + PADDING, 10, width, 30);
-		Border roundedBorder = new LineBorder(Color.black, 1, true);
+//		Border roundedBorder = new LineBorder(Color.black, 1, true);
 //		setBorder(roundedBorder);
-		setBorder( new SoftBevelBorder(BevelBorder.LOWERED));
-		
+//		setBorder( new SoftBevelBorder(BevelBorder.LOWERED));
+		// TODO no effect with setBounds(.) approach?
+		putClientProperty("JComponent.sizeVariant", "large");
 	}
-	
+
+	// TODO add gradient...
 	@Override
 	public void repaint() {
 		super.repaint();

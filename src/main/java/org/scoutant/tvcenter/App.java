@@ -1,14 +1,15 @@
 package org.scoutant.tvcenter;
 
+import java.awt.Font;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 
 import javax.swing.JFrame;
+import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
-import javax.swing.plaf.metal.MetalLookAndFeel;
-import javax.swing.plaf.metal.OceanTheme;
 
+import org.apache.log4j.Logger;
 import org.scoutant.mvc.Event;
 import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
@@ -45,9 +46,18 @@ public class App extends JFrame {
 	public void quit() {
 	}
 	
+	private static final Logger log = Logger.getLogger(App.class);
+	
 	public App() throws IOException, Exception {
 		super();
-    	Resource res = context().getResource("tv2.xml");
+		// TODO provided as Java 7, with Java 6 use : 
+//		UIManager.setLookAndFeel( "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		UIManager.setLookAndFeel( "javax.swing.plaf.nimbus.NimbusLookAndFeel");
+		LookAndFeel laf = UIManager.getLookAndFeel();
+		log.info("Using Look and feel : " + laf);
+		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
+
+		Resource res = context().getResource("tv2.xml");
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
     	
@@ -60,17 +70,12 @@ public class App extends JFrame {
 		
 		new Event("init").dispatch();
 		
-		
-		MetalLookAndFeel.setCurrentTheme( new OceanTheme());
-		UIManager.setLookAndFeel( new MetalLookAndFeel());
-		
 		this.addKeyListener( new KeyPressed());
 		
     	setSize(1000, 800);
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);
     	setVisible(true);
-    	
 
 	}
 	
