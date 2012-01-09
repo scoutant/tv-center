@@ -5,6 +5,9 @@ import java.io.InputStream;
 import java.util.Date;
 
 import javax.swing.JFrame;
+import javax.swing.UIManager;
+import javax.swing.plaf.metal.MetalLookAndFeel;
+import javax.swing.plaf.metal.OceanTheme;
 
 import org.scoutant.mvc.Event;
 import org.scoutant.mvc.EventWith;
@@ -57,12 +60,18 @@ public class App extends JFrame {
 		
 		new Event("init").dispatch();
 		
+		
+		MetalLookAndFeel.setCurrentTheme( new OceanTheme());
+		UIManager.setLookAndFeel( new MetalLookAndFeel());
+		
 		this.addKeyListener( new KeyPressed());
 		
     	setSize(1000, 800);
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);
     	setVisible(true);
+    	
+
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {

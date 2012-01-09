@@ -34,6 +34,10 @@ public class ChannelView extends JPanel implements ChangeListener{
 //    	this.setFocusable(true);
 //		this.addKeyListener( new KeyPressed());
 
+    	
+    	// TODO ok?
+    	setOpaque(false);
+    	
 		int i=0;
 		for(Program p : channel.programs) {
 //			ProgramWidget pw = new ProgramWidget( p, 0+200*i, 10);

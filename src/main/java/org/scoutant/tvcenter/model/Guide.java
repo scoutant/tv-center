@@ -48,12 +48,14 @@ public class Guide {
 		if (index>= channels.size()-1) return false;
 		index++;
 		channel().init();
+		fireEvent();
 		return true;
 	}
 	public boolean up(){
 		if (index<=0 ) return false;
 		index--;
 		channel().init();
+		fireEvent();
 		return true;
 	}
 

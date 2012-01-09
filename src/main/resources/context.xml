@@ -17,10 +17,6 @@
 	<bean class="org.scoutant.tvcenter.command.ParseGuide">
 		<property name="event" value="parse" />
 	</bean>
-	<bean class="org.scoutant.tvcenter.command.Refresh">
-		<property name="event" value="refresh" />
-	</bean>
-
 	<bean class="org.scoutant.tvcenter.command.InitCursor">
 		<property name="event" value="init" />
 	</bean>

@@ -13,9 +13,7 @@ public class InitCursor extends BaseCommand implements Command {
 	public void execute() {
 		// TODO position cursor against current time...
 		
-		
 		guide.init();
-		new Event("refresh").dispatch();
 	}
 
 }
