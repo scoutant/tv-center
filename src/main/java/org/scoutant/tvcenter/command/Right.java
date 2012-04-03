@@ -12,7 +12,7 @@ public class Right extends BaseCommand implements Command{
 		guide.channel().right();
 		// TODO : watch bounds!!
 //		new Event("refresh").dispatch();
-		log.debug( "program : " + guide.channel().program());
+//		log.debug( "program : " + guide.channel().program());
 	}
 
 }

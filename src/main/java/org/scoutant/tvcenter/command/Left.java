@@ -12,7 +12,7 @@ public class Left extends BaseCommand implements Command{
 		guide.channel().left();
 		// TODO : watch bounds!!
 //		new Event("refresh").dispatch();
-		log.debug( "program : " + guide.channel().program());
+//		log.debug( "program : " + guide.channel().program());
 	}
 
 }

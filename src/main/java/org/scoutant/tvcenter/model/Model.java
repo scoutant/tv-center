@@ -10,4 +10,6 @@ public class Model {
 	 */
 	public int vpTime;
 
+	public Process process;
+
 }

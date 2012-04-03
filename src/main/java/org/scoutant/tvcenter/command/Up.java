@@ -12,7 +12,7 @@ public class Up extends BaseCommand implements Command {
 		guide.up();
 		// TODO : watch bounds!!
 //		new Event("refresh").dispatch();
-		log.debug( "program : " + guide.channel().program());
+//		log.debug( "program : " + guide.channel().program());
 	}
 
 }

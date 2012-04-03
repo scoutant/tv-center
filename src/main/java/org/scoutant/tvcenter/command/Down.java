@@ -12,7 +12,7 @@ public class Down extends BaseCommand implements Command{
 		guide.down();
 		// TODO : watch bounds!!
 //		new Event("refresh").dispatch();
-		log.debug( "program : " + guide.channel().program());
+//		log.debug( "program : " + guide.channel().program());
 	}
 
 }

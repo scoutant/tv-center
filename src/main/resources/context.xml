@@ -33,4 +33,8 @@
 	<bean class="org.scoutant.tvcenter.command.KeyPressed">
 		<property name="event" value="keypressed" />
 	</bean>
+
+	<bean class="org.scoutant.tvcenter.command.Info">
+		<property name="event" value="info" />
+	</bean>
 </beans>
