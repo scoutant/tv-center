@@ -5,5 +5,9 @@ public class Model {
 	public Guide guide = new Guide();
 	
 	public int now ;
+	/**
+	 * Time of start of viewport
+	 */
+	public int vpTime;
 
 }

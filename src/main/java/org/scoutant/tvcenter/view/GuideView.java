@@ -57,7 +57,10 @@ public class GuideView extends JPanel implements ChangeListener{
 		setBackground(Color.decode("0xF1E2AE"));
 		
     	JPanel past = new JPanel();
-    	past.setBounds(0, 0, 400, getHeight());
+//    	past.setBounds(0, 0, 400, getHeight());
+    	int width = (App.model().now - App.model().vpTime) * ProgramWidget.MINUTE;
+    	past.setBounds(0, 0, width, getHeight());
+    	
     	past.setBackground(Color.decode("0xF1E2BE"));
     	add(past);
     	

@@ -57,11 +57,16 @@ public class App extends JFrame {
 		log.info("Using Look and feel : " + laf);
 		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
 
-		Resource res = context().getResource("tv2.xml");
+//		Resource res = context().getResource("tv2.xml");
+//		Resource res = context().getResource("tv.xml");
+		Resource res = context().getResource("file:tv.xml");
+		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 		//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
     	
 		App.model().now = (int) (new Date().getTime()/1000/60);
+		// showing what has been on last 45 min:
+		App.model().vpTime = App.model().now - 45; 
 
 		guide = new GuideView();
 		this.add( guide);
