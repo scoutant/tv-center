@@ -9,6 +9,7 @@ import java.util.Date;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 
@@ -18,6 +19,7 @@ import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Model;
 import org.scoutant.tvcenter.view.GuideView;
+import org.scoutant.tvcenter.view.ProgramView;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
@@ -58,16 +60,21 @@ public class App extends JFrame {
 		log.info("Using Look and feel : " + laf);
 		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
 
-		Resource res = context().getResource("file:/tmp/tv2.xml");
+//		Resource res = context().getResource("file:/tmp/tv2.xml");
+		Resource res = context().getResource("file:src/test/resources/tv.xml");
 		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 //		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
     	
 		App.model().now = (int) (new Date().getTime()/1000/60);
 		// showing what has been on last 45 min:
-		App.model().vpTime = App.model().now - 45; 
-
+		App.model().vpTime = App.model().now - 45;
+		
+		
 		setSize(1000, 800);
+		JPanel programView = new ProgramView(getHeight(), getWidth());
+		this.add(programView);
+
 		guide = new GuideView(getHeight(), getWidth());
 		this.add( guide);
 		

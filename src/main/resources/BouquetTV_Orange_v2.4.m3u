@@ -1,0 +1,345 @@
+#EXTM3U
+#EXTINF:0,0. Mosaique 1 Orange
+rtp://@232.0.1.29:8200
+#EXTINF:0,0. Mosaique 2 Orange
+rtp://@232.0.1.30:8200
+#EXTINF:0,0. Mosaique 3 Orange
+rtp://@232.0.1.50:8200
+#EXTINF:0,0. Mosaique 4 Orange
+rtp://@232.0.1.41:8200
+#EXTINF:0,00. Mosaique 1 CanalSat
+udp://@239.192.2.42:8208
+#EXTINF:0,00. Mosaique 2 CanalSat
+udp://@239.192.2.43:8208
+#EXTINF:0,00. Mosaique 3 CanalSat
+udp://@239.192.2.44:8208
+#EXTINF:0,00. Mosaique 4 CanalSat
+udp://@232.0.5.7:8208
+#EXTINF:0,00. Mosaique 5 CanalSat
+udp://@232.0.5.33:8208
+#EXTINF:0,1. TF1
+rtp://@232.0.1.17:8200
+#EXTINF:0,2. France 2
+rtp://@232.0.1.1:8200
+#EXTINF:0,3. France 3 National
+rtp://@232.0.1.2:8200
+#EXTINF:0,4. Canal+ (en clair)
+rtp://@232.0.5.1:8200
+#EXTINF:0,4. Canal+ (en clair par CanalSat)
+udp://@239.192.2.61:8208
+#EXTINF:0,5. France 5
+rtp://@232.0.1.4:8200
+#EXTINF:0,5. France 5 (par CanalSat)
+udp://@239.192.2.6:8208
+#EXTINF:0,6. M6
+rtp://@232.0.1.10:8200
+#EXTINF:0,7. Arte
+rtp://@232.0.1.5:8200
+#EXTINF:0,7. Arte (par CanalSat)
+udp://@239.192.2.93:8208
+#EXTINF:0,8. Direct 8
+rtp://@232.0.1.19:8200
+#EXTINF:0,9. W9
+rtp://@232.0.1.43:8200
+#EXTINF:0,10. TMC
+rtp://@232.0.1.7:8200
+#EXTINF:0,11. NT 1
+rtp://@232.0.1.20:8200
+#EXTINF:0,12. NRJ 12
+rtp://@232.0.1.8:8200
+#EXTINF:0,13. LCP/PS
+rtp://@232.0.1.21:8200
+#EXTINF:0,13. LCP/PS (par CanalSat)
+udp://@232.0.5.30:8208
+#EXTINF:0,14. France 4
+rtp://@232.0.1.9:8200
+#EXTINF:0,15. BFM TV
+rtp://@232.0.1.22:8200
+#EXTINF:0,16. i>Tele
+rtp://@232.0.5.2:8200
+#EXTINF:0,16. i>Tele (par CanalSat)
+udp://@239.192.2.7:8208
+#EXTINF:0,17. Virgin 17
+rtp://@232.0.1.11:8200
+#EXTINF:0,18. Gulli
+rtp://@232.0.1.12:8200
+#EXTINF:0,19. Orange Sport Info
+rtp://@232.0.1.58:8200
+#EXTINF:0,19. Orange Sport Info (streaming)
+mms://livewm.orange.fr/live-multicanaux
+#EXTINF:0,21. Barker Orange Cinema Series
+rtp://@232.0.1.77:8200
+#EXTINF:0,27. Orange Cinema Series a la demande
+rtp://@232.0.1.82:8200
+#EXTINF:0,28. Video a la Demande
+rtp://@232.0.1.60:8200
+#EXTINF:0,29. Barker Bouquet Jeunesse
+rtp://@232.0.1.84:8200
+#EXTINF:0,30. VoD : Cinema
+rtp://@232.0.1.60:8200
+#EXTINF:0,41. TV 5 Monde
+rtp://@232.0.1.13:8200
+#EXTINF:0,41. TV 5 Monde (par CanalSat)
+udp://@239.192.2.127:8208
+#EXTINF:0,42. France O
+rtp://@232.0.1.24:8200
+#EXTINF:0,42. France O (par CanalSat)
+udp://@239.192.2.191:8208
+#EXTINF:0,50. TV Festival de Cannes
+rtp://@232.0.1.75:8200
+#EXTINF:0,57. Orange Sport Event 3
+rtp://@232.0.1.68:8200
+#EXTINF:0,58. Orange Sport Event 2
+rtp://@232.0.1.69:8200
+#EXTINF:0,58. Orange Sport Event 2 (streaming)
+mms://livewm.orange.fr/direct-evenementiels2
+#EXTINF:0,59. Orange Sport Event 1
+rtp://@232.0.1.42:8200
+#EXTINF:0,59. Orange Sport Event 1 (streaming)
+mms://livewm.orange.fr/direct-evenementiels
+#EXTINF:0,63. AB Moteurs
+rtp://@232.0.1.44:8200
+#EXTINF:0,71. Equidia
+rtp://@232.0.1.81:8200
+#EXTINF:0,101. Luxe TV
+rtp://@232.0.1.37:8200
+#EXTINF:0,102. Fashion TV
+rtp://@232.0.1.32:8200
+#EXTINF:0,110. TNA
+rtp://@232.0.1.71:8200
+#EXTINF:0,111. Nolife
+rtp://@232.0.1.18:8200
+#EXTINF:0,112. Liberty TV
+rtp://@232.0.1.35:8200
+#EXTINF:0,120. Barker Bouquet Jeunesse
+rtp://@232.0.1.83:8200
+#EXTINF:0,140. Barker Bouquet Musique
+rtp://@232.0.1.84:8200
+#EXTINF:0,141. Trace TV
+rtp://@232.0.1.26:8200
+#EXTINF:0,142. NRJ Hits
+rtp://@232.0.1.56:8200
+#EXTINF:0,160. France 24 Francais
+rtp://@232.0.1.79:8200
+#EXTINF:0,161. Euronews
+rtp://@232.0.1.25:8200
+#EXTINF:0,161. Euronews (par CanalSat)
+udp://@232.0.5.20:8208
+#EXTINF:0,162. LCP 24/24
+rtp://@232.0.1.91:8200
+#EXTINF:0,163. Public Senat 24/24
+rtp://@232.0.1.61:8200
+#EXTINF:0,164. BBC World News
+rtp://@232.0.1.33:8200
+#EXTINF:0,165. Skynews
+rtp://@232.0.1.65:8200
+#EXTINF:0,166. CNN
+rtp://@232.0.1.3:8200
+#EXTINF:0,166. CNN (par CanalSat)
+udp://@239.192.2.129:8208
+#EXTINF:0,167. CNBC Europe
+rtp://@232.0.1.73:8200
+#EXTINF:0,167. CNBC Europe (par CanalSat)
+udp://@239.192.2.212:8208
+#EXTINF:0,168. France 24 English
+rtp://@232.0.1.85:8200
+#EXTINF:0,172. Deutsche Welle
+rtp://@232.0.1.34:8200
+#EXTINF:0,174. Al Jazeera
+rtp://@232.0.1.51:8200
+#EXTINF:0,174. Al Jazeera (par CanalSat)
+udp://@239.192.2.237:8208
+#EXTINF:0,175. Medi 1 Sat
+rtp://@232.0.1.52:8200
+#EXTINF:0,176. France 24 Arabe
+rtp://@232.0.1.97:8200
+#EXTINF:0,177. Canal Info News
+rtp://@232.0.1.95:8200
+#EXTINF:0,178. Guysen TV
+rtp://@232.0.1.70:8200
+#EXTINF:0,179. Record News
+rtp://@232.0.1.23:8200
+#EXTINF:0,191. Demain
+rtp://@232.0.1.31:8200
+#EXTINF:0,192. KTO
+rtp://@232.0.1.47:8200
+#EXTINF:0,192. KTO (par CanalSat)
+udp://@239.192.2.218:8208
+#EXTINF:0,193. Ma Chaine Etudiante
+rtp://@232.0.1.92:8200
+#EXTINF:0,201. Astrocenter
+rtp://@232.0.1.53:8200
+#EXTINF:0,203. M6 Boutique
+rtp://@232.0.1.48:8200
+#EXTINF:0,204. Best of Shopping
+rtp://@232.0.1.49:8200
+#EXTINF:0,211. France 3 Alpes
+rtp://@232.0.1.182:8200
+#EXTINF:0,212. France 3 Alsace
+rtp://@232.0.2.23:8200
+#EXTINF:0,213. France 3 Aquitaine
+rtp://@232.0.1.177:8200
+#EXTINF:0,214. France 3 Auvergne
+rtp://@232.0.1.179:8200
+#EXTINF:0,215. France 3 Basse-Normandie
+rtp://@232.0.1.178:8200
+#EXTINF:0,216. France 3 Bourgogne
+rtp://@232.0.1.181:8200
+#EXTINF:0,217. France 3 Bretagne
+rtp://@232.0.2.25:8200
+#EXTINF:0,218. France 3 Centre
+rtp://@232.0.1.191:8200
+#EXTINF:0,219. France 3 Champagne-Ardenne
+rtp://@232.0.1.194:8200
+#EXTINF:0,220. France 3 Corse via Stella
+rtp://@232.0.1.180:8200
+#EXTINF:0,221. France 3 Cote-d'Azur
+rtp://@232.0.1.190:8200
+#EXTINF:0,222. France 3 Franche-Comte
+rtp://@232.0.1.176:8200
+#EXTINF:0,223. France 3 Haute-Normandie
+rtp://@232.0.1.195:8200
+#EXTINF:0,224. France 3 Languedoc-Roussillon
+rtp://@232.0.1.187:8200
+#EXTINF:0,225. France 3 Limousin
+rtp://@232.0.1.184:8200
+#EXTINF:0,226. France 3 Lorraine
+rtp://@232.0.1.188:8200
+#EXTINF:0,227. France 3 Midi-Pyrenees
+rtp://@232.0.2.24:8200
+#EXTINF:0,228. France 3 Nord Pas-de-Calais
+rtp://@232.0.1.183:8200
+#EXTINF:0,229. France 3 Paris Ile-de-France
+rtp://@232.0.1.192:8200
+#EXTINF:0,230. France 3 Pays de la Loire
+rtp://@232.0.1.189:8200
+#EXTINF:0,231. France 3 Picardie
+rtp://@232.0.1.174:8200
+#EXTINF:0,232. France 3 Poitou-Charentes
+rtp://@232.0.1.193:8200
+#EXTINF:0,233. France 3 Provence-Alpes
+rtp://@232.0.1.186:8200
+#EXTINF:0,234. France 3 Rhone-Alpes
+rtp://@232.0.1.185:8200
+#EXTINF:0,236. TV8 Mont Blanc
+rtp://@232.0.1.46:8200
+#EXTINF:0,237. Telif
+rtp://@232.0.1.54:8200
+#EXTINF:0,238. NRJ Paris
+rtp://@232.0.1.72:8200
+#EXTINF:0,240. Locale 1
+rtp://@232.0.8.1:8200
+#EXTINF:0,241. Locale 2
+rtp://@232.0.8.2:8200
+#EXTINF:0,242. Locale 3
+rtp://@232.0.8.3:8200
+#EXTINF:0,250. TVE Internacional
+rtp://@232.0.1.6:8200
+#EXTINF:0,254. RTP Internacional
+rtp://@232.0.1.36:8200
+#EXTINF:0,254. RTP Internacional (par CanalSat)
+udp://@239.192.2.236:8208
+#EXTINF:0,260. Raitalia
+rtp://@232.0.1.76:8200
+#EXTINF:0,280. TVP Polonia
+rtp://@232.0.1.45:8200
+#EXTINF:0,285. TVR International
+rtp://@232.0.1.67:8200
+#EXTINF:0,290. Channel One Russia (ORTi)
+rtp://@232.0.1.55:8200
+#EXTINF:0,295. Duna TV
+rtp://@232.0.1.93:8200
+#EXTINF:0,300. TRT International
+rtp://@232.0.1.63:8200
+#EXTINF:0,305. Armenia 1 TV
+rtp://@232.0.1.96:8200
+#EXTINF:0,310. 2M Monde
+rtp://@232.0.1.38:8200
+#EXTINF:0,310. 2M Monde (par CanalSat)
+udp://@239.192.2.234:8208
+#EXTINF:0,311. Al Aoula
+rtp://@232.0.1.80:8200
+#EXTINF:0,312. Canal Algerie
+rtp://@232.0.1.39:8200
+#EXTINF:0,312. Canal Algerie (par CanalSat)
+udp://@239.192.2.235:8208
+#EXTINF:0,314. TV7 Tunisia
+rtp://@232.0.1.40:8200
+#EXTINF:0,314. TV7 Tunisia (par CanalSat)
+udp://@239.192.2.238:8208
+#EXTINF:0,358. CCTV F
+rtp://@232.0.1.57:8200
+#EXTINF:0,370. Apsara TV
+rtp://@232.0.1.66:8200
+#EXTINF:0,380. 3A Telesud
+rtp://@232.0.1.94:8200
+#EXTINF:0,33. Roland Garros 2010 La 3D HD
+rtp://@232.0.1.217:8200
+#EXTINF:0,400. Roland Garros 2010 Mosaique
+rtp://@232.0.2.3:8200
+#EXTINF:0,401. Roland Garros 2010 Court P. Chatrier
+rtp://@232.0.2.5:8200
+#EXTINF:0,401. Roland Garros 2010 Court P. Chatrier HD
+rtp://@232.0.1.215:8200
+#EXTINF:0,402. Roland Garros 2010 Court S. Lenglen
+rtp://@232.0.2.6:8200
+#EXTINF:0,402. Roland Garros 2010 Court S. Lenglen HD
+rtp://@232.0.1.216:8200
+#EXTINF:0,403. Roland Garros 2010 Court 1
+rtp://@232.0.2.9:8200
+#EXTINF:0,404. Roland Garros 2010 Court 2
+rtp://@232.0.2.10:8200
+#EXTINF:0,405. Roland Garros 2010 Court 3
+rtp://@232.0.2.11:8200
+#EXTINF:0,406. Roland Garros 2010 Court 6
+rtp://@232.0.2.12:8200
+#EXTINF:0,407. Roland Garros 2010 Court 7
+rtp://@232.0.2.13:8200
+#EXTINF:0,00. Zik'
+udp://@239.192.2.153:8208
+#EXTINF:0,00. TPS Star (en clair)
+udp://@232.0.5.3:8208
+#EXTINF:0,00. CineCinema Premier (en clair)
+udp://@239.192.2.70:8208
+#EXTINF:0,00. Canal+ Decale (en clair)
+udp://@239.192.2.64:8208
+#EXTINF:0,00. Canal+ Sport (en clair)
+udp://@239.192.2.65:8208
+#EXTINF:0,00. Foot+/Rugby+ 1 (en clair)
+udp://@239.192.2.239:8208
+#EXTINF:0,00. Foot+/Rugby+ 2 (en clair)
+udp://@239.192.2.38:8208
+#EXTINF:0,00. Foot+/Rugby+ 3 (en clair)
+udp://@239.192.2.37:8208
+#EXTINF:0,00. Foot+/Rugby+ 4 (en clair)
+udp://@239.192.2.41:8208
+#EXTINF:0,00. Foot+/Rugby+ 5 (en clair)
+udp://@239.192.2.40:8208
+#EXTINF:0,00. Foot+/Rugby+ 6 (en clair)
+udp://@239.192.2.35:8208
+#EXTINF:0,00. Foot+/Rugby+ 7 (en clair)
+udp://@239.192.2.36:8208
+#EXTINF:0,00. Foot+/Rugby+ 8 (en clair)
+udp://@239.192.2.39:8208
+#EXTINF:0,00. Barker Canal+ a la demande
+udp://@232.0.5.47:8208
+#EXTINF:0,1. TF1 HD
+rtp://@232.0.1.205:8200
+#EXTINF:0,2. France 2 HD
+rtp://@232.0.1.207:8200
+#EXTINF:0,3. France 3 HD
+rtp://@232.0.1.214:8200
+#EXTINF:0,6. M6 HD
+rtp://@232.0.1.201:8200
+#EXTINF:0,7. Arte HD
+rtp://@232.0.1.202:8200
+#EXTINF:0,8. Direct 8 HD
+rtp://@232.0.1.206:8200
+#EXTINF:0,12. NRJ 12 HD
+rtp://@232.0.1.204:8200
+#EXTINF:0,15. BFM TV HD
+rtp://@232.0.1.209:8200
+#EXTINF:0, Playlist pour Bouquet TV Orange v2.4 concue par (c) porciello.com
+http://www.porciello.com/inventel/
+#EXTINF:0, Plus d'infos sur http://www.porciello.com/inventel/tv_vlc.htm
+http://www.porciello.com/inventel/tv_vlc.htm
