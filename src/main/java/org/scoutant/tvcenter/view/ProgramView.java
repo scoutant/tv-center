@@ -1,6 +1,7 @@
 package org.scoutant.tvcenter.view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.BorderFactory;
 import javax.swing.JPanel;
@@ -20,7 +21,8 @@ public class ProgramView extends JPanel implements ChangeListener{
 	
 	public ProgramView( int width, int height) {
 		super();
-    	setSize( width, height);
+//    	setSize( width, height);
+    	setPreferredSize( new Dimension(width, height ));
     	setLayout(null);
     	setBackground( Color.lightGray);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.GREEN), this.getBorder()));

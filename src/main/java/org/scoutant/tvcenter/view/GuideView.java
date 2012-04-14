@@ -2,6 +2,7 @@ package org.scoutant.tvcenter.view;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -47,7 +48,8 @@ public class GuideView extends JPanel implements ChangeListener{
 	public GuideView(int width, int height) {
 		super();
     	setLayout(null);
-    	setSize( width, height);
+//    	setSize( width, height);
+    	setPreferredSize( new Dimension(width, height ));
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLUE), this.getBorder()));
 
     	// TODO add the listener to all obj that may get focus!

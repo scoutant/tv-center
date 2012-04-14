@@ -1,5 +1,7 @@
 package org.scoutant.tvcenter;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -27,6 +29,7 @@ import org.springframework.core.io.Resource;
 public class App extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(App.class);
+	private static final int PRAGRAM_VIEW_HEIGHT = 200;
 	
 	private static ApplicationContext _context = null;
 	public static ApplicationContext context() {
@@ -61,25 +64,25 @@ public class App extends JFrame {
 		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
 
 //		Resource res = context().getResource("file:/tmp/tv2.xml");
-		Resource res = context().getResource("file:src/test/resources/tv.xml");
+		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
+//		Resource res = context().getResource("file:src/test/resources/tv.xml");
 		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
-//		setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
+
+    	setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
+
     	
 		App.model().now = (int) (new Date().getTime()/1000/60);
 		// showing what has been on last 45 min:
 		App.model().vpTime = App.model().now - 45;
 		
+		setSize(1200, 1000);
+		JPanel programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
 		
-		setSize(1000, 800);
-		JPanel programView = new ProgramView(getHeight(), getWidth());
 		this.add(programView);
 
-		guide = new GuideView(getHeight(), getWidth());
+		guide = new GuideView(getWidth(), getHeight()-PRAGRAM_VIEW_HEIGHT);
 		this.add( guide);
-		
-//		this.add( panel,  BorderLayout.PAGE_START);
-//		add( new GuideView(), BorderLayout.PAGE_END);
 		
 		new Event("init").dispatch();
 		
