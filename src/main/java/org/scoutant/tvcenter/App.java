@@ -1,7 +1,5 @@
 package org.scoutant.tvcenter;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
@@ -56,8 +54,7 @@ public class App extends JFrame {
 	
 	public App() throws IOException, Exception {
 		super();
-		// TODO provided as Java 7, with Java 6 use : 
-//		UIManager.setLookAndFeel( "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+		// with Java 6 use : "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
 		UIManager.setLookAndFeel( "javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		LookAndFeel laf = UIManager.getLookAndFeel();
 		log.info("Using Look and feel : " + laf);
@@ -70,7 +67,6 @@ public class App extends JFrame {
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 
     	setLayout(new BoxLayout(this.getContentPane(), BoxLayout.PAGE_AXIS));
-
     	
 		App.model().now = (int) (new Date().getTime()/1000/60);
 		// showing what has been on last 45 min:
