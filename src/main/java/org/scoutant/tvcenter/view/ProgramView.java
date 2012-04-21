@@ -10,7 +10,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
-import org.scoutant.tvcenter.model.Channel;
+import org.scoutant.tvcenter.App;
+import org.scoutant.tvcenter.model.Program;
 
 /**
  * @author scoutant
@@ -33,11 +34,11 @@ public class ProgramView extends JPanel implements ChangeListener{
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.GREEN), this.getBorder()));
     	setOpaque(false);
     	
-    	int h = height/3;
-    	add( new ProgramItemView(width, h));
     	
-    	add( new ProgramItemView(width, h));
-    	add( new ProgramItemView(width, h));
+    	int h = height/3;
+    	
+    	add( new TitleView(width, h, "TITLE"));
+//    	add( new ProgramItemView(width, h));
     	
 //    	repaint();
 	}
@@ -47,7 +48,25 @@ public class ProgramView extends JPanel implements ChangeListener{
 	
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		refresh();
+		for (Object o : getComponents())  {
+			log.info("stateChanged, o  : " + o);
+			if (o instanceof ChangeListener) {
+				((ChangeListener)o).stateChanged(e);
+			}
+		}
+	}
+	
+	private class TitleView extends ProgramItemView {
+		public TitleView(int width, int height, String label) {
+			super(width, height, label);
+		}
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			Program p = App.model().guide.channel().program();
+			if (p!=null)
+			set( p.title);
+		}
 	}
 	
 }

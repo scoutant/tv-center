@@ -7,7 +7,6 @@ public class Init extends BaseCommand implements Command {
 
 	@Override
 	public void execute() {
-		System.out.println("Init");
 	}
 
 }

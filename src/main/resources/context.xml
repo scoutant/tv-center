@@ -37,4 +37,7 @@
 	<bean class="org.scoutant.tvcenter.command.Info">
 		<property name="event" value="info" />
 	</bean>
+	<bean class="org.scoutant.tvcenter.command.Refresh">
+		<property name="event" value="refresh" />
+	</bean>
 </beans>

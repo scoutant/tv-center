@@ -48,6 +48,7 @@ public class App extends JFrame {
 		return _app;
 	}
 	public GuideView guide;
+	public ProgramView programView;
 	
 	public void quit() {
 	}
@@ -73,7 +74,7 @@ public class App extends JFrame {
 		App.model().vpTime = App.model().now - 45;
 		
 		setSize(1200, 1000);
-		JPanel programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
+		programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
 		
 		this.add(programView);
 

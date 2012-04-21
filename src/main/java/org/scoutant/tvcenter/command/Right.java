@@ -3,6 +3,7 @@ package org.scoutant.tvcenter.command;
 import org.apache.log4j.Logger;
 import org.scoutant.mvc.BaseCommand;
 import org.scoutant.mvc.Command;
+import org.scoutant.mvc.Event;
 
 public class Right extends BaseCommand implements Command{
 
@@ -11,7 +12,7 @@ public class Right extends BaseCommand implements Command{
 	public void execute() {
 		guide.channel().right();
 		// TODO : watch bounds!!
-//		new Event("refresh").dispatch();
+		new Event("refresh").dispatch();
 //		log.debug( "program : " + guide.channel().program());
 	}
 
