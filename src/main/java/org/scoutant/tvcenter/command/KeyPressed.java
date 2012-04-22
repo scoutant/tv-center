@@ -9,12 +9,8 @@ import org.scoutant.mvc.Event;
 
 public class KeyPressed extends BaseCommand implements CommandWith<Integer> {
 	private static final Logger log = Logger.getLogger(KeyPressed.class); 
-	
 	@Override
 	public void execute(Integer k) {
-		
-//		if ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)
-		
 		switch( k) {
 		case KeyEvent.VK_Q: System.exit(0); break;
 		case KeyEvent.VK_W: System.exit(0); break;
