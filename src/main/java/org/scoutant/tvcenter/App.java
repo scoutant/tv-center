@@ -90,6 +90,8 @@ public class App extends JFrame {
     	setVisible(true);
 
     	addComponentListener( new ResizeListener());
+    	
+//		new Event("down").dispatch();
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {

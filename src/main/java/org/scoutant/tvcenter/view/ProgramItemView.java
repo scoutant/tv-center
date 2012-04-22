@@ -24,9 +24,10 @@ public abstract class ProgramItemView extends JPanel implements ChangeListener {
 	private static final int MARGIN = 100;
 	private static final int PADDING = 20;
 	
-	private JLabel v;
+	private JLabel v = new JLabel("Brad Pitt", JLabel.LEFT); ;
+	private Font f = v.getFont();
 	
-	public ProgramItemView( int width, int height, String label) {
+	public ProgramItemView( int width, int height, String label, int size) {
 		super();
     	setLayout(null);
     	setPreferredSize(new Dimension(width, height));
@@ -35,14 +36,17 @@ public abstract class ProgramItemView extends JPanel implements ChangeListener {
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.MAGENTA), this.getBorder()));
     	setOpaque(false);
     	JLabel l = new JLabel(label, JLabel.RIGHT);
-    	Font f = l.getFont();
-    	l.setFont( f.deriveFont(f.getStyle() ^ Font.BOLD));
     	l.setBounds(0,  0, MARGIN, height);
     	add ( l);
-    	v = new JLabel("Brad Pitt", JLabel.LEFT); 
     	v.setBounds(MARGIN+PADDING,  0, width-MARGIN-PADDING, height);
+    	v.setFont( f.deriveFont(f.getStyle() ^ Font.BOLD, size));
     	add ( v);
     	repaint();
+	}
+
+	public ProgramItemView( int width, int height, String label, int size, int boldness) {
+		this(width, height, label, size);
+		v.setFont( f.deriveFont(f.getStyle() ^ boldness, size));
 	}
 	
 

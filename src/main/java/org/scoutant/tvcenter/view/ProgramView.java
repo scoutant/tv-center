@@ -2,6 +2,7 @@ package org.scoutant.tvcenter.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -23,23 +24,16 @@ public class ProgramView extends JPanel implements ChangeListener{
 	
 	public ProgramView( int width, int height) {
 		super();
-//    	setSize( width, height);
-//    	setLayout(null);
     	setPreferredSize( new Dimension(width, height ));
-//    	setSize(new Dimension(width, height ));
-//    	setBounds(0, 0, width, height);
     	setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
-    	
     	setBackground( Color.lightGray);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.GREEN), this.getBorder()));
     	setOpaque(false);
-    	
-    	
-    	int h = height/3;
-    	
-    	add( new TitleView(width, h, "TITLE"));
-//    	add( new ProgramItemView(width, h));
-    	
+    	int h = height/4;
+    	add( new TitleView(		width, h));
+    	add( new SubtitleView(	width, h));
+    	add( new DescView(		width, h));
+    	add( new CreditsView(	width, h));
 //    	repaint();
 	}
 
@@ -57,8 +51,8 @@ public class ProgramView extends JPanel implements ChangeListener{
 	}
 	
 	private class TitleView extends ProgramItemView {
-		public TitleView(int width, int height, String label) {
-			super(width, height, label);
+		public TitleView(int width, int height) {
+			super(width, height, "title", 45);
 		}
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -66,6 +60,42 @@ public class ProgramView extends JPanel implements ChangeListener{
 			Program p = App.model().guide.channel().program();
 			if (p!=null)
 			set( p.title);
+		}
+	}
+	private class SubtitleView extends ProgramItemView {
+		public SubtitleView(int width, int height) {
+			super(width, height, "subtitle", 30);
+		}
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			Program p = App.model().guide.channel().program();
+			if (p!=null)
+			set( p.subtitle);
+		}
+	}
+	private class DescView extends ProgramItemView {
+		public DescView(int width, int height) {
+			super(width, height, "description", 15, Font.PLAIN);
+		}
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			Program p = App.model().guide.channel().program();
+			if (p!=null)
+			set( p.desc);
+		}
+	}
+	private class CreditsView extends ProgramItemView {
+		public CreditsView(int width, int height) {
+			super(width, height, "credits", 15, Font.PLAIN);
+		}
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			Program p = App.model().guide.channel().program();
+			if (p!=null)
+			set( p.credits);
 		}
 	}
 	

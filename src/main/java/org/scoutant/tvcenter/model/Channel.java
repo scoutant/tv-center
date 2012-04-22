@@ -74,7 +74,7 @@ public class Channel implements Serializable {
 	public Channel(Attributes atts) {
 		this.id = atts.getValue("id");
 		this.url = playlist.get( id);
-		log.debug("playlist lengt : " + playlist.size());
+//		log.debug("playlist lengt : " + playlist.size());
 	}
 
 	public Channel add(Program o) {
