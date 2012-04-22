@@ -12,6 +12,9 @@ public class KeyPressed extends BaseCommand implements CommandWith<Integer> {
 	
 	@Override
 	public void execute(Integer k) {
+		
+//		if ((e.getModifiers() & KeyEvent.CTRL_MASK) != 0)
+		
 		switch( k) {
 		case KeyEvent.VK_Q: System.exit(0); break;
 		case KeyEvent.VK_W: System.exit(0); break;
