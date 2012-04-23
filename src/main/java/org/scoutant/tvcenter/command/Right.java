@@ -7,6 +7,7 @@ import org.scoutant.mvc.Event;
 
 public class Right extends BaseCommand implements Command{
 
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger(Right.class);
 	@Override
 	public void execute() {

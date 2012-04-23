@@ -31,8 +31,6 @@ public class ProgramWidget extends JButton {
 		int width = (int) ((program.stop-program.start)*MINUTE -2*PADDING);
 //		setBounds( (p.start-App.model().now)*MINUTE + PADDING, 10, width, 30);
 		setBounds( (p.start-App.model().vpTime)*MINUTE + PADDING, 10, width, 30);
-
-		
 		
 //		Border roundedBorder = new LineBorder(Color.black, 1, true);
 //		setBorder(roundedBorder);

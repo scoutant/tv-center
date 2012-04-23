@@ -7,13 +7,13 @@ import org.scoutant.mvc.Event;
 
 public class Up extends BaseCommand implements Command {
 
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger(Up.class);
 	@Override
 	public void execute() {
 		guide.up();
 		// TODO : watch bounds!!
 		new Event("refresh").dispatch();
-//		log.debug( "program : " + guide.channel().program());
 	}
 
 }

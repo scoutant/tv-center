@@ -18,7 +18,7 @@ public class ChannelView extends JPanel implements ChangeListener{
 
 	private static final long serialVersionUID = 7966178905763354703L;
 	/** pixels representing 1 minute */ 
-	public static final int MINUTE = 8;
+//	public static final int MINUTE = 8;
 	private static final Logger log = Logger.getLogger( ChannelView.class);
 	private Channel channel;
 	private List<JComponent> views = new ArrayList<JComponent>();

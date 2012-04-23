@@ -46,5 +46,8 @@
 	<bean class="org.scoutant.tvcenter.command.RecordChannel">
 		<property name="event" value="recordChannel" />
 	</bean>
+	<bean class="org.scoutant.tvcenter.command.StepForward">
+		<property name="event" value="step" />
+	</bean>
 
 </beans>

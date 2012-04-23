@@ -12,6 +12,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.scoutant.mvc.Event;
@@ -24,7 +26,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 
-public class App extends JFrame {
+public class App extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(App.class);
 	private static final int PRAGRAM_VIEW_HEIGHT = 200;
@@ -62,8 +64,8 @@ public class App extends JFrame {
 		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
 
 //		Resource res = context().getResource("file:/tmp/tv2.xml");
-		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
-//		Resource res = context().getResource("file:src/test/resources/tv.xml");
+//		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
+		Resource res = context().getResource("file:src/test/resources/tv.xml");
 		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 
@@ -90,8 +92,9 @@ public class App extends JFrame {
     	setVisible(true);
 
     	addComponentListener( new ResizeListener());
-    	
-//		new Event("down").dispatch();
+
+    	// TODO How to invote a post refresh?
+//    	new Event("refresh").dispatch();
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {
@@ -104,4 +107,10 @@ public class App extends JFrame {
     		log.debug("resize");
     	}
     }
+
+	@Override
+	public void stateChanged(ChangeEvent e) {
+		programView.stateChanged(e);
+		guide.stateChanged(e);
+	}
 }

@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.RenderingHints;
 import java.awt.Stroke;
 import java.util.ArrayList;
@@ -48,7 +49,6 @@ public class GuideView extends JPanel implements ChangeListener{
 	public GuideView(int width, int height) {
 		super();
     	setLayout(null);
-//    	setSize( width, height);
     	setPreferredSize( new Dimension(width, height ));
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLUE), this.getBorder()));
 
@@ -59,9 +59,9 @@ public class GuideView extends JPanel implements ChangeListener{
 //		setBackground(Color.decode("0xFFCB60"));
 		setBackground(Color.decode("0xF1E2AE"));
 		
-    	JPanel past = new JPanel();
-    	int pastWidth = (App.model().now - App.model().vpTime) * ProgramWidget.MINUTE;
-    	past.setBounds(0, 0, pastWidth, getHeight());
+    	past = new JPanel();
+//    	int pastWidth = (App.model().now - App.model().vpTime) * ProgramWidget.MINUTE;
+//    	past.setBounds(0, 0, pastWidth, height);
     	
     	past.setBackground(Color.decode("0xF1E2BE"));
     	add(past);
@@ -88,6 +88,8 @@ public class GuideView extends JPanel implements ChangeListener{
 		for (ChannelView c : views) {
 			c.refresh();
 		}
+		log.debug("resetting bounds : " + pastRect());
+		past.setBounds( pastRect());
 	}
 	
 	// http://stackoverflow.com/questions/8472083/how-to-draw-a-jpanel-as-a-nimbus-jbutton
@@ -97,6 +99,7 @@ public class GuideView extends JPanel implements ChangeListener{
     private final Color edgeColor = new Color(140, 145, 145);
     private final Stroke edgeStroke = new BasicStroke(1);
     private final GradientPaint upperGradient = new GradientPaint( 0, 0, lighterColor, 0, gradientSize, darkerColor);
+	private JPanel past;
 
     
     // TODO make gradient not look like button but adapted for full screen panel
@@ -118,6 +121,8 @@ public class GuideView extends JPanel implements ChangeListener{
         g2.drawRoundRect(0, 0, getWidth()-1, getHeight()-1,gradientSize/2, gradientSize/2);
     }
     
-    
+    private Rectangle pastRect() {
+    	int pastWidth = (App.model().now - App.model().vpTime) * ProgramWidget.MINUTE;
+    	return new Rectangle( 0, 0, pastWidth, getHeight());
+    }
 }
-

@@ -43,7 +43,7 @@ public class ProgramView extends JPanel implements ChangeListener{
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		for (Object o : getComponents())  {
-			log.info("stateChanged, o  : " + o);
+//			log.info("stateChanged, o  : " + o);
 			if (o instanceof ChangeListener) {
 				((ChangeListener)o).stateChanged(e);
 			}
