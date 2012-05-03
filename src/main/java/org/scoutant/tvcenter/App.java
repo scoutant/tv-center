@@ -6,10 +6,11 @@ import java.awt.event.ComponentEvent;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
@@ -93,8 +94,8 @@ public class App extends JFrame implements ChangeListener {
 
     	addComponentListener( new ResizeListener());
 
-    	// TODO How to invote a post refresh?
-//    	new Event("refresh").dispatch();
+    	Timer timer = new Timer(true);
+    	timer.schedule( new RepetedStepForwardTask(), 0, 1*60*1000);
 	}
 	
     public static void main( String[] args ) throws IOException, Exception {
@@ -113,4 +114,15 @@ public class App extends JFrame implements ChangeListener {
 		programView.stateChanged(e);
 		guide.stateChanged(e);
 	}
+	
+	private class RepetedStepForwardTask extends TimerTask {
+		@Override
+		public void run() {
+			try {
+				new Event("step").dispatch();
+			} catch (Exception e) {
+				log.error("timer...");
+			}
+		}
+	}	
 }

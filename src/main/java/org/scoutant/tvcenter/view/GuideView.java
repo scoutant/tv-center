@@ -88,7 +88,7 @@ public class GuideView extends JPanel implements ChangeListener{
 		for (ChannelView c : views) {
 			c.refresh();
 		}
-		log.debug("resetting bounds : " + pastRect());
+//		log.debug("resetting bounds : " + pastRect());
 		past.setBounds( pastRect());
 	}
 	
