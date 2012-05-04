@@ -24,7 +24,7 @@
 	<bean class="org.scoutant.tvcenter.command.Init">
 		<property name="event" value="start" />
 	</bean>
-	<bean class="org.scoutant.tvcenter.command.Start">
+	<bean class="org.scoutant.tvcenter.command.WatchChannel">
 		<property name="event" value="start" />
 	</bean>
 	<bean class="org.scoutant.tvcenter.command.Stop">
@@ -45,6 +45,9 @@
 	</bean>
 	<bean class="org.scoutant.tvcenter.command.RecordChannel">
 		<property name="event" value="recordChannel" />
+	</bean>
+	<bean class="org.scoutant.tvcenter.command.RecordProgram">
+		<property name="event" value="recordProgram" />
 	</bean>
 	<bean class="org.scoutant.tvcenter.command.StepForward">
 		<property name="event" value="step" />

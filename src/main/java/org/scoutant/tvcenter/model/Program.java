@@ -29,6 +29,8 @@ public class Program implements Serializable {
 	public String desc = "";
 	public String credits = "";
 	public String country;
+	
+	public boolean record= false;
 
 	@Override
 	public String toString() {
@@ -42,7 +44,6 @@ public class Program implements Serializable {
 		str += ", country: " + country;
 		return str + " ]";
 	}
-
 	
 }
 

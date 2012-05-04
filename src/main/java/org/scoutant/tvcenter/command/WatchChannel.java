@@ -7,8 +7,8 @@ import org.scoutant.mvc.BaseCommand;
 import org.scoutant.mvc.Command;
 import org.scoutant.tvcenter.App;
 
-public class Start extends BaseCommand implements Command {
-	private static final Logger log = Logger.getLogger(Start.class);
+public class WatchChannel extends BaseCommand implements Command {
+	private static final Logger log = Logger.getLogger(WatchChannel.class);
 	@Override
 	public void execute() {
 //		ProcessBuilder pb = new ProcessBuilder("nautilus", "/tmp");
