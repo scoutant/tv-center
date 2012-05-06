@@ -12,7 +12,6 @@ public class Down extends BaseCommand implements Command{
 	@Override
 	public void execute() {
 		guide.down();
-		// TODO : watch bounds!!
 		new Event("refresh").dispatch();
 	}
 

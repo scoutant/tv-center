@@ -23,6 +23,7 @@ import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Model;
 import org.scoutant.tvcenter.view.GuideView;
 import org.scoutant.tvcenter.view.ProgramView;
+import org.scoutant.tvcenter.view.View;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
@@ -51,7 +52,7 @@ public class App extends JFrame implements ChangeListener {
 		return _app;
 	}
 	public GuideView guide;
-	public ProgramView programView;
+	public View headerView;
 	
 	public void quit() {
 	}
@@ -62,11 +63,11 @@ public class App extends JFrame implements ChangeListener {
 		UIManager.setLookAndFeel( "javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		LookAndFeel laf = UIManager.getLookAndFeel();
 		log.info("Using Look and feel : " + laf);
-		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 14));
+		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 15));
 
 //		Resource res = context().getResource("file:/tmp/tv2.xml");
-//		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
-		Resource res = context().getResource("file:src/test/resources/tv.xml");
+		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
+//		Resource res = context().getResource("file:src/test/resources/tv.xml");
 		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 
@@ -77,9 +78,11 @@ public class App extends JFrame implements ChangeListener {
 		App.model().vpTime = App.model().now - 45;
 		
 		setSize(1200, 1000);
-		programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
+//		programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
+		// TODO test
+		headerView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
 		
-		this.add(programView);
+		this.add(headerView);
 
 		guide = new GuideView(getWidth(), getHeight()-PRAGRAM_VIEW_HEIGHT);
 		this.add( guide);
@@ -111,7 +114,7 @@ public class App extends JFrame implements ChangeListener {
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		programView.stateChanged(e);
+		headerView.stateChanged(e);
 		guide.stateChanged(e);
 	}
 	

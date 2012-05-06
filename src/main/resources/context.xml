@@ -52,5 +52,8 @@
 	<bean class="org.scoutant.tvcenter.command.StepForward">
 		<property name="event" value="step" />
 	</bean>
+	<bean class="org.scoutant.tvcenter.command.SetForRecord">
+		<property name="event" value="tag" />
+	</bean>
 
 </beans>

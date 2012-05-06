@@ -22,7 +22,7 @@ import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Guide;
 
-public class GuideView extends JPanel implements ChangeListener{
+public class GuideView extends View {
 
 	private static final long serialVersionUID = 7966178905763354703L;
 	/** pixels representing 1 minute */ 
@@ -30,32 +30,13 @@ public class GuideView extends JPanel implements ChangeListener{
 	private Guide guide;
 	private List<ChannelView> views = new ArrayList<ChannelView>();
 	
-	@Override
-	public void revalidate() {
-		super.revalidate();
-		log.debug("revalidating...");
-	}
-	@Override
-	public void repaint() {
-		super.repaint();
-		log.debug("repaintng...");
-	}
-	@Override
-	public void update(Graphics g) {
-		super.update(g);
-		log.debug("updating...");
-	}
-	
 	public GuideView(int width, int height) {
 		super();
     	setLayout(null);
     	setPreferredSize( new Dimension(width, height ));
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLUE), this.getBorder()));
-
-    	// TODO add the listener to all obj that may get focus!
     	this.setFocusable(true);
 		this.addKeyListener( new KeyPressed());
-
 //		setBackground(Color.decode("0xFFCB60"));
 		setBackground(Color.decode("0xF1E2AE"));
 		
@@ -73,8 +54,7 @@ public class GuideView extends JPanel implements ChangeListener{
 		int z;
 		for (z=0; z<guide.channels.size(); z++){
 			ChannelView cv = new ChannelView(guide.channel(z));
-//			cv.setBounds(0, z*60, getWidth(), 50);
-			cv.setBounds(0, z*60, 2500, 50);
+			cv.setBounds(0, z*50, 2500, 50);
 			add( cv);
 			views.add(cv);
 			setComponentZOrder(cv, 1);

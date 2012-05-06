@@ -13,8 +13,9 @@ public class SetForRecord extends BaseCommand implements Command {
 		// TODO get current program and toggle 'record property'
 		Program p = App.model().guide.channel().program();
 		p.record = !p.record;
+		log.debug("will be recorded : " + p);
 		// TODO refresh guide view to get a record icon visible...
 		// TODO start direct recording if 'now' happen to be with the program...
-	
+		
 	}
 }

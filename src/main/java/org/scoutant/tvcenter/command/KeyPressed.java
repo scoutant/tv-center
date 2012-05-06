@@ -25,6 +25,7 @@ public class KeyPressed extends BaseCommand implements CommandWith<Integer> {
 			case KeyEvent.VK_S: 	new Event("stop")	.dispatch(); break;
 			
 			case KeyEvent.VK_I: 	new Event("info")	.dispatch(); break;
+			case KeyEvent.VK_O: 	new Event("tag")	.dispatch(); break;
 			// TODO for dev only :
 			case KeyEvent.VK_M: 	new Event("step")	.dispatch(); break;
 		}

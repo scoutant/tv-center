@@ -18,7 +18,7 @@ import org.scoutant.tvcenter.model.Program;
  * @author scoutant
  * show informations corresponding the selected program.
  */
-public abstract class ProgramItemView extends JPanel implements ChangeListener {
+public abstract class ProgramItemView extends View {
 	private static final long serialVersionUID = 7407997357438197229L;
 	private static final Logger log = Logger.getLogger( ProgramItemView.class);
 	private static final int MARGIN = 100;
@@ -52,13 +52,6 @@ public abstract class ProgramItemView extends JPanel implements ChangeListener {
 
 	protected void set( String text) {
 		v.setText(text);
-//		Program p = App.model().guide.channel().program();
-		// TODO the prop refresh!
-//		p.title  
 	}
-	
-//	@Override
-//	public void stateChanged(ChangeEvent e) {
-//	}
 	
 }

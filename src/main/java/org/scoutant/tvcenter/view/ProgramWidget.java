@@ -2,6 +2,7 @@ package org.scoutant.tvcenter.view;
 
 import java.awt.Color;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.border.Border;
 import javax.swing.border.LineBorder;
@@ -20,16 +21,17 @@ public class ProgramWidget extends JButton {
 		super(p.title);
 		this.program = p;
 		int width = (int) ((program.stop-program.start)*MINUTE);
-		setBounds(x, y, width, 30);
+		setBounds(x, y, width, 48);
 		Border roundedBorder = new LineBorder(Color.black, 2, true);
 		setBorder(roundedBorder);
+		// TODO how to add an icon?
+		setIcon(new ImageIcon("/home/coutant/2012/tv-center/src/main/resources/ksame_1433_24.png"));
 	}
 
 	public ProgramWidget(Program p) {
 		super(p.title);
 		this.program = p;
 		int width = (int) ((program.stop-program.start)*MINUTE -2*PADDING);
-//		setBounds( (p.start-App.model().now)*MINUTE + PADDING, 10, width, 30);
 		setBounds( (p.start-App.model().vpTime)*MINUTE + PADDING, 10, width, 30);
 		
 //		Border roundedBorder = new LineBorder(Color.black, 1, true);
