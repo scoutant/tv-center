@@ -32,7 +32,7 @@ public class ProgramWidget extends JButton {
 		super(p.title);
 		this.program = p;
 		int width = (int) ((program.stop-program.start)*MINUTE -2*PADDING);
-		setBounds( (p.start-App.model().vpTime)*MINUTE + PADDING, 10, width, 30);
+		setBounds( (p.start-App.model().vpTime)*MINUTE + PADDING, 10, width, GuideView.CHANNEL_HEIGHT-10);
 		
 //		Border roundedBorder = new LineBorder(Color.black, 1, true);
 //		setBorder(roundedBorder);

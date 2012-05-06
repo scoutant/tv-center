@@ -29,6 +29,7 @@ public class GuideHandler extends DefaultHandler {
 //	private Guide guide = new Guide();
 	private Guide guide = App.model().guide;
 	private Channel c = null;
+	private boolean inChannel = false;
 	private Program p = null;
 	private int element = 0;
 	private static Logger log = Logger.getLogger( GuideHandler.class);
@@ -45,9 +46,12 @@ public class GuideHandler extends DefaultHandler {
 	public void startElement (String uri, String name, String e, Attributes atts) {
 		if ( e == "channel") {
 			c = new Channel(atts);
+			inChannel=true;
 		}
 		if ( e == "icon") {
-			c.icon = atts.getValue("src");
+			if (inChannel) {
+				c.icon = atts.getValue("src");
+			}
 		}
 		if ( e == "programme") {
 			try {
@@ -76,6 +80,7 @@ public class GuideHandler extends DefaultHandler {
 		}
 		if ( e == "channel") {
 			guide.add(c);
+			inChannel =false;
 		}
 		element=0;
 	}

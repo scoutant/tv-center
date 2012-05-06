@@ -3,9 +3,15 @@ package org.scoutant.tvcenter.view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -29,12 +35,20 @@ public class ProgramView extends View {
     	setBackground( Color.lightGray);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.GREEN), this.getBorder()));
     	setOpaque(false);
-    	int h = height/4;
+    	int h = height/5;
+//    	BufferedImage myPicture;
+//		try {
+//			myPicture = ImageIO.read(new File("/home/coutant/2012/tv-center/src/main/resources/ksame_1433_24.png"));
+//			JLabel picLabel = new JLabel(new ImageIcon( myPicture ));
+//			add( picLabel );
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}    	
+    	add( new HeaderView(width, h));
     	add( new TitleView(		width, h));
     	add( new SubtitleView(	width, h));
     	add( new DescView(		width, h));
     	add( new CreditsView(	width, h));
-//    	repaint();
 	}
 
 	@Override
@@ -56,7 +70,6 @@ public class ProgramView extends View {
 		public void stateChanged(ChangeEvent e) {
 			Program p = App.model().guide.channel().program();
 			log.info("stateChanged, in TitleView p " + p );
-
 			if (p!=null)
 				set( p.title);
 		}
@@ -70,7 +83,7 @@ public class ProgramView extends View {
 		public void stateChanged(ChangeEvent e) {
 			Program p = App.model().guide.channel().program();
 			if (p!=null)
-			set( p.subtitle);
+				set( p.subtitle);
 		}
 	}
 	private class DescView extends ProgramItemView {
@@ -82,7 +95,7 @@ public class ProgramView extends View {
 		public void stateChanged(ChangeEvent e) {
 			Program p = App.model().guide.channel().program();
 			if (p!=null)
-			set( p.desc);
+				set( p.desc);
 		}
 	}
 	private class CreditsView extends ProgramItemView {
@@ -94,7 +107,7 @@ public class ProgramView extends View {
 		public void stateChanged(ChangeEvent e) {
 			Program p = App.model().guide.channel().program();
 			if (p!=null)
-			set( p.credits);
+				set( p.credits);
 		}
 	}
 	

@@ -22,6 +22,7 @@ import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Model;
 import org.scoutant.tvcenter.view.GuideView;
+import org.scoutant.tvcenter.view.HeaderView;
 import org.scoutant.tvcenter.view.ProgramView;
 import org.scoutant.tvcenter.view.View;
 import org.springframework.context.ApplicationContext;
@@ -31,7 +32,10 @@ import org.springframework.core.io.Resource;
 public class App extends JFrame implements ChangeListener {
 	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(App.class);
-	private static final int PRAGRAM_VIEW_HEIGHT = 200;
+	private static final int PROGRAM_VIEW_HEIGHT = 300;
+	private static final int WIDTH = 1200;
+	private static final int HEIGHT = 1000;
+	
 	
 	private static ApplicationContext _context = null;
 	public static ApplicationContext context() {
@@ -51,10 +55,13 @@ public class App extends JFrame implements ChangeListener {
 	public static App app(){
 		return _app;
 	}
+	public View programView;
 	public GuideView guide;
-	public View headerView;
 	
+	
+	// TODO on exiting, do stop all processes!
 	public void quit() {
+		
 	}
 	
 	public App() throws IOException, Exception {
@@ -77,14 +84,11 @@ public class App extends JFrame implements ChangeListener {
 		// showing what has been on last 45 min:
 		App.model().vpTime = App.model().now - 45;
 		
-		setSize(1200, 1000);
-//		programView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
-		// TODO test
-		headerView = new ProgramView(getWidth(), PRAGRAM_VIEW_HEIGHT );
-		
-		this.add(headerView);
+		setSize(WIDTH, HEIGHT);
+		programView = new ProgramView(WIDTH, PROGRAM_VIEW_HEIGHT );
+		this.add(programView);
 
-		guide = new GuideView(getWidth(), getHeight()-PRAGRAM_VIEW_HEIGHT);
+		guide = new GuideView(getWidth(), getHeight()-PROGRAM_VIEW_HEIGHT);
 		this.add( guide);
 		
 		new Event("init").dispatch();
@@ -114,7 +118,7 @@ public class App extends JFrame implements ChangeListener {
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
-		headerView.stateChanged(e);
+		programView.stateChanged(e);
 		guide.stateChanged(e);
 	}
 	

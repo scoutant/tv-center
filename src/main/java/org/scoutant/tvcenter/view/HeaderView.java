@@ -2,16 +2,18 @@ package org.scoutant.tvcenter.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.Font;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
-import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
+import org.scoutant.tvcenter.model.Channel;
 import org.scoutant.tvcenter.model.Program;
 
 /**
@@ -21,29 +23,29 @@ import org.scoutant.tvcenter.model.Program;
 public class HeaderView extends View {
 	private static final long serialVersionUID = -6376793187222055930L;
 	private static final Logger log = Logger.getLogger( HeaderView.class);
+	private JLabel icon;
 	
 	public HeaderView( int width, int height) {
 		super();
     	setPreferredSize( new Dimension(width, height ));
-//    	setLayout( new BoxLayout(this, BoxLayout.PAGE_AXIS));
     	setLayout( new BoxLayout(this, BoxLayout.LINE_AXIS));
     	setBackground( Color.lightGray);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.ORANGE), this.getBorder()));
     	setOpaque(false);
-//    	add( new TitleView(		width, h));
-    	add (new ProgramView(getWidth(), height ));
 	}
 
 	@Override
 	public void stateChanged(ChangeEvent e) {
 		log.info("stateChanged, in Headerview : " );
-		for (Object o : getComponents())  {
-			log.info("stateChanged, o  : " + o);
-			if (o instanceof ChangeListener) {
-				((ChangeListener)o).stateChanged(e);
-			}
+		if (icon!=null) remove( icon);
+		Channel c = App.model().guide.channel();
+		if (c==null) return;
+		try {
+//			icon = new JLabel( new ImageIcon( new URL("http://telepoche.guidetele.com/medias/chaines/france4.gif") ));
+			icon = new JLabel( new ImageIcon( new URL( c.icon) ));
+			add( icon );
+		} catch (MalformedURLException exception) {
+			log.error(exception);
 		}
 	}
-	
-	
 }

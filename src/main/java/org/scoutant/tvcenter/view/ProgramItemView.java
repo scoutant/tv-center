@@ -6,13 +6,8 @@ import java.awt.Font;
 
 import javax.swing.BorderFactory;
 import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
-import org.scoutant.tvcenter.App;
-import org.scoutant.tvcenter.model.Program;
 
 /**
  * @author scoutant
@@ -20,18 +15,18 @@ import org.scoutant.tvcenter.model.Program;
  */
 public abstract class ProgramItemView extends View {
 	private static final long serialVersionUID = 7407997357438197229L;
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger( ProgramItemView.class);
 	private static final int MARGIN = 100;
 	private static final int PADDING = 20;
 	
-	private JLabel v = new JLabel("Brad Pitt", JLabel.LEFT); ;
+	private JLabel v = new JLabel("a label here...", JLabel.LEFT); ;
 	private Font f = v.getFont();
 	
 	public ProgramItemView( int width, int height, String label, int size) {
 		super();
     	setLayout(null);
     	setPreferredSize(new Dimension(width, height));
-//    	log.debug( "width : " + width + ", height : " + height);
     	setBackground( Color.green);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.MAGENTA), this.getBorder()));
     	setOpaque(false);

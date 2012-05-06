@@ -12,10 +12,8 @@ import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.BorderFactory;
 import javax.swing.JPanel;
 import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
@@ -25,24 +23,23 @@ import org.scoutant.tvcenter.model.Guide;
 public class GuideView extends View {
 
 	private static final long serialVersionUID = 7966178905763354703L;
-	/** pixels representing 1 minute */ 
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger( GuideView.class);
 	private Guide guide;
 	private List<ChannelView> views = new ArrayList<ChannelView>();
+	public static final int CHANNEL_HEIGHT = 40;
 	
 	public GuideView(int width, int height) {
 		super();
     	setLayout(null);
     	setPreferredSize( new Dimension(width, height ));
-    	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLUE), this.getBorder()));
+//    	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.BLUE), this.getBorder()));
     	this.setFocusable(true);
 		this.addKeyListener( new KeyPressed());
 //		setBackground(Color.decode("0xFFCB60"));
 		setBackground(Color.decode("0xF1E2AE"));
 		
     	past = new JPanel();
-//    	int pastWidth = (App.model().now - App.model().vpTime) * ProgramWidget.MINUTE;
-//    	past.setBounds(0, 0, pastWidth, height);
     	
     	past.setBackground(Color.decode("0xF1E2BE"));
     	add(past);
@@ -54,7 +51,7 @@ public class GuideView extends View {
 		int z;
 		for (z=0; z<guide.channels.size(); z++){
 			ChannelView cv = new ChannelView(guide.channel(z));
-			cv.setBounds(0, z*50, 2500, 50);
+			cv.setBounds(0, z*CHANNEL_HEIGHT, 2500, CHANNEL_HEIGHT);
 			add( cv);
 			views.add(cv);
 			setComponentZOrder(cv, 1);
@@ -68,7 +65,6 @@ public class GuideView extends View {
 		for (ChannelView c : views) {
 			c.refresh();
 		}
-//		log.debug("resetting bounds : " + pastRect());
 		past.setBounds( pastRect());
 	}
 	
