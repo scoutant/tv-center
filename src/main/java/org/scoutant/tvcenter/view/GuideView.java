@@ -26,7 +26,7 @@ public class GuideView extends View {
 	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger( GuideView.class);
 	private Guide guide;
-	private List<ChannelView> views = new ArrayList<ChannelView>();
+	private List<ChannelView> views = new ArrayList<>();
 	public static final int CHANNEL_HEIGHT = 40;
 	
 	public GuideView(int width, int height) {

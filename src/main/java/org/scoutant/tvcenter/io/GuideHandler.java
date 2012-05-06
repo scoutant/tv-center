@@ -23,10 +23,6 @@ public class GuideHandler extends DefaultHandler {
 	public static final int YEAR = 15;
 	public static final int COUNTRY = 16;
 	
-	// TODO With Java 7 would be with diamond operator: 
-	// private List<Program> programs = new ArrayList<>();
-//	private List<Program> programs = new ArrayList<Program>();
-//	private Guide guide = new Guide();
 	private Guide guide = App.model().guide;
 	private Channel c = null;
 	private boolean inChannel = false;

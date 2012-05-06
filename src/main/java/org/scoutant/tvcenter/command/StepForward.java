@@ -10,6 +10,7 @@ import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.model.Channel;
 
 public class StepForward extends BaseCommand implements Command {
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger( StepForward.class); 		
 	@Override
 	public void execute() {

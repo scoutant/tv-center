@@ -16,7 +16,7 @@ public class ChannelView extends View {
 	private static final long serialVersionUID = 7966178905763354703L;
 	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger( ChannelView.class);
-	private List<JComponent> views = new ArrayList<JComponent>();
+	private List<JComponent> views = new ArrayList<>();
 	
 	public ChannelView( Channel channel) {
 		super();

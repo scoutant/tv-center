@@ -64,10 +64,11 @@ public class Channel implements Serializable {
 	
 	private static final long serialVersionUID = 9126743732976715575L;
 	public String id;
-	public List<Program> programs = new ArrayList<Program>();
+	public List<Program> programs = new ArrayList<>();
 	public String name;
 	public String icon;
 	public String url;
+	@SuppressWarnings("unused")
 	private static final Logger log = Logger.getLogger(Channel.class);
 	private int index;
 	
@@ -122,7 +123,7 @@ public class Channel implements Serializable {
 	
 	
 
-	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	private List<ChangeListener> listeners = new ArrayList<>();
 	public void addListener(ChangeListener l) {
 		listeners.add( l);
 	}

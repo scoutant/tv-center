@@ -11,7 +11,7 @@ import javax.swing.event.ChangeListener;
  */
 public class Guide {
 	
-	public List<Channel> channels = new ArrayList<Channel>();
+	public List<Channel> channels = new ArrayList<>();
 	public Guide add(Channel o) {
 		channels.add( o);
 		return this;
@@ -64,7 +64,7 @@ public class Guide {
 		channel().init();
 	}
 	
-	private List<ChangeListener> listeners = new ArrayList<ChangeListener>();
+	private List<ChangeListener> listeners = new ArrayList<>();
 	public void addListener(ChangeListener l) {
 		listeners.add( l);
 	}

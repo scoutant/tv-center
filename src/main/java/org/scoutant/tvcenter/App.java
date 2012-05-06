@@ -22,7 +22,6 @@ import org.scoutant.mvc.EventWith;
 import org.scoutant.tvcenter.listener.KeyPressed;
 import org.scoutant.tvcenter.model.Model;
 import org.scoutant.tvcenter.view.GuideView;
-import org.scoutant.tvcenter.view.HeaderView;
 import org.scoutant.tvcenter.view.ProgramView;
 import org.scoutant.tvcenter.view.View;
 import org.springframework.context.ApplicationContext;
@@ -66,7 +65,6 @@ public class App extends JFrame implements ChangeListener {
 	
 	public App() throws IOException, Exception {
 		super();
-		// with Java 6 use : "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel"
 		UIManager.setLookAndFeel( "javax.swing.plaf.nimbus.NimbusLookAndFeel");
 		LookAndFeel laf = UIManager.getLookAndFeel();
 		log.info("Using Look and feel : " + laf);

@@ -14,7 +14,6 @@ import javax.swing.event.ChangeEvent;
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.model.Channel;
-import org.scoutant.tvcenter.model.Program;
 
 /**
  * @author scoutant
