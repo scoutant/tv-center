@@ -13,6 +13,7 @@ public class Stop extends BaseCommand implements Command {
 		Process process = App.model().process;
 		if (process==null) return;
 		process.destroy();
+		App.model().recording = false;
 	}
 
 }

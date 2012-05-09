@@ -17,6 +17,8 @@ public class SetForRecord extends BaseCommand implements Command {
 //		log.debug("will be recorded : " + p);
 		// TODO refresh guide view to get a record icon visible...
 		// TODO start direct recording if 'now' happen to be with the program...
+		// TODO ok avc step?
+		new Event("step").dispatch();
 		new Event("refresh").dispatch();
 	}
 }

@@ -13,8 +13,8 @@ public class KeyPressed extends BaseCommand implements CommandWith<Integer> {
 	@Override
 	public void execute(Integer k) {
 		switch( k) {
-			case KeyEvent.VK_Q: System.exit(0); break;
-			case KeyEvent.VK_W: System.exit(0); break;
+			case KeyEvent.VK_Q: 	new Event("stop").dispatch(); System.exit(0); break;
+			case KeyEvent.VK_W: 	new Event("stop").dispatch(); System.exit(0); break;
 	
 			case KeyEvent.VK_LEFT:	new Event("left")	.dispatch(); break;
 			case KeyEvent.VK_RIGHT: new Event("right")	.dispatch(); break;

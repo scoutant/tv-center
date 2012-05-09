@@ -42,7 +42,8 @@ public class Guide {
 		return channels.get(index);
 	}
 	
-	private int index;
+	// TODO ok as public ?
+	public int index;
 
 	public boolean down(){
 		if (index>= channels.size()-1) return false;

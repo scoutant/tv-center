@@ -18,10 +18,11 @@ public class RecordProgram extends BaseCommand implements Command {
 		String url = c.url;
 		log.info("recording channel with name : " + c.name);
 //		Process.instance.vlc( ip+" --sout file/ps:/home/coutant/tele/"+channel.normalizedName+"-"+Model.instance.now+".mpeg");
-		// TODO
+		// TODO change name with program data...
 		ProcessBuilder pb = new ProcessBuilder("vlc", url, "--sout",  "file/ps:/home/coutant/tele/" + c.name + "-" + App.model().now +".mpeg");
 		try {
 			App.model().process = pb.start();
+			App.model().recording = true;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

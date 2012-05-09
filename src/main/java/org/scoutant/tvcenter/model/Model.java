@@ -11,5 +11,6 @@ public class Model {
 	public int vpTime;
 
 	public Process process;
+	public boolean recording = false;
 
 }

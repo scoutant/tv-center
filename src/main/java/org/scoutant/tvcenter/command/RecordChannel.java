@@ -22,6 +22,7 @@ public class RecordChannel extends BaseCommand implements Command {
 		ProcessBuilder pb = new ProcessBuilder("vlc", url, "--sout",  "file/ps:/home/coutant/tele/" + c.name + "-" + App.model().now +".mpeg");
 		try {
 			App.model().process = pb.start();
+			App.model().recording = true;
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
