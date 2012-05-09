@@ -28,7 +28,7 @@ public abstract class ProgramItemView extends View {
     	setLayout(null);
     	setPreferredSize(new Dimension(width, height));
     	setBackground( Color.green);
-    	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.MAGENTA), this.getBorder()));
+//    	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.MAGENTA), this.getBorder()));
     	setOpaque(false);
     	JLabel l = new JLabel(label, JLabel.RIGHT);
     	l.setBounds(0,  0, MARGIN, height);

@@ -12,6 +12,7 @@ import javax.swing.event.ChangeListener;
 import org.apache.log4j.Logger;
 import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.model.Program;
+import org.scoutant.tvcenter.utils.DateUtils;
 
 /**
  * @author scoutant
@@ -28,7 +29,7 @@ public class ProgramView extends View {
     	setBackground( Color.lightGray);
     	setBorder( BorderFactory.createCompoundBorder( BorderFactory.createLineBorder(Color.GREEN), this.getBorder()));
     	setOpaque(false);
-    	int h = height/5;
+    	int h = height/6;
 //    	BufferedImage myPicture;
 //		try {
 //			myPicture = ImageIO.read(new File("/home/coutant/2012/tv-center/src/main/resources/ksame_1433_24.png"));
@@ -39,6 +40,7 @@ public class ProgramView extends View {
 //		}    	
     	add( new HeaderView(width, h));
     	add( new TitleView(		width, h));
+    	add( new TimeView(		width, h));
     	add( new SubtitleView(	width, h));
     	add( new DescView(		width, h));
     	add( new CreditsView(	width, h));
@@ -56,7 +58,7 @@ public class ProgramView extends View {
 	
 	private class TitleView extends ProgramItemView {
 		public TitleView(int width, int height) {
-			super(width, height, "title", 45);
+			super(width, height, "title", 55);
 		}
 		private static final long serialVersionUID = 1L;
 		@Override
@@ -101,6 +103,19 @@ public class ProgramView extends View {
 			Program p = App.model().guide.channel().program();
 			if (p!=null)
 				set( p.credits);
+		}
+	}
+	private class TimeView extends ProgramItemView {
+		public TimeView(int width, int height) {
+			super(width, height, "time", 28);
+		}
+		private static final long serialVersionUID = 1L;
+		@Override
+		public void stateChanged(ChangeEvent e) {
+			Program p = App.model().guide.channel().program();
+			if (p!=null) {
+				set ( DateUtils.formatAsHour(p.start) + "-" + DateUtils.formatAsHour(p.stop)); 
+			}
 		}
 	}
 	

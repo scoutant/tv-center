@@ -23,4 +23,8 @@ public class DateUtils {
 	public static String format(long l) {
 		return df2.format( new Date(l*60*1000));
 	}
+	private static final DateFormat dfHour = new SimpleDateFormat("HH:mm");
+	public static String formatAsHour(long l) {
+		return dfHour.format( new Date(l*60*1000));
+	}
 }
