@@ -45,11 +45,13 @@ public class ProgramWidget extends JButton {
 	@Override
 	public void repaint() {
 		super.repaint();
-		if (program!=null && program.equals( App.model().guide.channel().program())) {
+		if (program==null) return; 
+		if (program.equals( App.model().guide.channel().program())) {
 			setBackground( Color.CYAN);
 		} else {
 			setBackground( Color.white);
 		}
+		setForeground( program.record ? Color.RED : Color.BLACK);
 	}
 	
 	public void colorize() {

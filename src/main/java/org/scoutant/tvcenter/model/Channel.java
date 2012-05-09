@@ -105,6 +105,13 @@ public class Channel implements Serializable {
 		return true;
 	}
 	
+	public Program program(int time){
+		for (Program p : programs) {
+			if (time < p.stop ) return p;
+		}
+		return null;
+	}
+	
 	public Program program(){
 		return programs.get(index);
 	}

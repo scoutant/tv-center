@@ -7,7 +7,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 /**
- * the TV Guide is a collection of Tv programs organized by channel
+ * An Electronic Program Guide is a collection of Tv programs organized by channel
  */
 public class Guide {
 	

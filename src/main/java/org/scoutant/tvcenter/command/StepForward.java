@@ -8,6 +8,7 @@ import org.scoutant.mvc.Command;
 import org.scoutant.mvc.Event;
 import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.model.Channel;
+import org.scoutant.tvcenter.model.Program;
 
 public class StepForward extends BaseCommand implements Command {
 	@SuppressWarnings("unused")
@@ -36,6 +37,11 @@ public class StepForward extends BaseCommand implements Command {
 		}*/
 //		guide = App.model().guide;
 		for (Channel c : guide.channels) {
+			Program p = c.program( now);
+			if ( (p != null) && p.record && (p.start == now) ) {
+				// TODO terminer !!
+//				App.model().guide.
+			}
 		}
 		
 	}

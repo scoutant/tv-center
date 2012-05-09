@@ -3,6 +3,7 @@ package org.scoutant.tvcenter.command;
 import org.apache.log4j.Logger;
 import org.scoutant.mvc.BaseCommand;
 import org.scoutant.mvc.Command;
+import org.scoutant.mvc.Event;
 import org.scoutant.tvcenter.App;
 import org.scoutant.tvcenter.model.Program;
 
@@ -13,9 +14,9 @@ public class SetForRecord extends BaseCommand implements Command {
 		// TODO get current program and toggle 'record property'
 		Program p = App.model().guide.channel().program();
 		p.record = !p.record;
-		log.debug("will be recorded : " + p);
+//		log.debug("will be recorded : " + p);
 		// TODO refresh guide view to get a record icon visible...
 		// TODO start direct recording if 'now' happen to be with the program...
-		
+		new Event("refresh").dispatch();
 	}
 }
