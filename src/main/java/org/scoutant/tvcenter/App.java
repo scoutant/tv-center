@@ -3,6 +3,8 @@ package org.scoutant.tvcenter;
 import java.awt.Font;
 import java.awt.event.ComponentAdapter;
 import java.awt.event.ComponentEvent;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
@@ -69,10 +71,9 @@ public class App extends JFrame implements ChangeListener {
 		LookAndFeel laf = UIManager.getLookAndFeel();
 		log.info("Using Look and feel : " + laf);
 		laf.getDefaults().put("Button.font", new Font("Tahoma", Font.BOLD, 15));
-
-//		Resource res = context().getResource("file:/tmp/tv2.xml");
-		Resource res = context().getResource("file:/home/coutant/2010/airtv/src/main/flex/assets/tv.xml");
-//		Resource res = context().getResource("file:src/test/resources/tv.xml");
+		
+		Resource res = context().getResource("file:" + System.getProperty("user.home") + "/downloads/tv.xml");
+		log.info("Sourcing EPG file :  " + res.getFile().getAbsolutePath());
 		
     	new EventWith<InputStream>( "parse", res.getInputStream()).dispatch();
 
@@ -95,6 +96,31 @@ public class App extends JFrame implements ChangeListener {
 		
     	setLocationRelativeTo(null);
     	setDefaultCloseOperation( EXIT_ON_CLOSE);
+    	// TODO ok? better?
+    	addWindowListener( new WindowListener() {
+			@Override
+			public void windowOpened(WindowEvent arg0) {
+			}
+			@Override
+			public void windowIconified(WindowEvent arg0) {
+			}
+			@Override
+			public void windowDeiconified(WindowEvent arg0) {
+			}
+			@Override
+			public void windowDeactivated(WindowEvent arg0) {
+			}
+			@Override
+			public void windowClosing(WindowEvent arg0) {
+			}
+			@Override
+			public void windowClosed(WindowEvent arg0) {
+				new Event("stop").dispatch();
+			}
+			@Override
+			public void windowActivated(WindowEvent arg0) {
+			}
+		});
     	setVisible(true);
 
     	addComponentListener( new ResizeListener());
