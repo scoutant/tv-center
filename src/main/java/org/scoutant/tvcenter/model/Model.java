@@ -12,5 +12,7 @@ public class Model {
 
 	public Process process;
 	public boolean recording = false;
+	
+	public Program programRecording = null;
 
 }

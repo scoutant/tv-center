@@ -36,10 +36,13 @@ public class StepForward extends BaseCommand implements Command {
 			}
 		}*/
 //		guide = App.model().guide;
+		log.debug("step forward : " + now);
 		for (int i = 0; i<guide.channels.size(); i++) {
 			Channel c = guide.channel(i);
 			Program p = c.program( now);
-			if ( (p != null) &&  App.model().recording && p.record && (p.stop == now) ) {
+			log.debug( "p now for channel : "  + p.title + ", on " + c.name + "stop : " + p.stop + ", eqals? " + (App.model().programRecording==p));
+			
+			if ( App.model().recording && (p != null) &&  App.model().programRecording==p && ( now == p.stop-1 ) ) {
 				guide.index = i;
 				new Event("stop").dispatch();
 				return;

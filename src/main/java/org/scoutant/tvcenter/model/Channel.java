@@ -21,25 +21,6 @@ import org.xml.sax.Attributes;
  * </channel>
  */
 public class Channel implements Serializable {
-/*	
-	public function Playlist() {
-		icon['C1.telepoche.com'] = tf1; ip['C1.telepoche.com'] = "rtp://@232.0.1.17:8200";
-		icon['C2.telepoche.com'] = france2; ip['C2.telepoche.com'] = "rtp://@232.0.1.1:8200";
-		icon['C3.telepoche.com'] = france3; ip['C3.telepoche.com'] = "rtp://@232.0.1.2:8200";
-		icon['C4.telepoche.com'] = canalplus; ip['C4.telepoche.com'] = "rtp://@232.0.5.1:8200";
-		icon['C5.telepoche.com'] = arte; ip['C5.telepoche.com'] = "rtp://@232.0.1.5:8200";
-		icon['C6.telepoche.com'] = m6; ip['C6.telepoche.com'] = "rtp://@232.0.1.10:8200";
-		icon['C7.telepoche.com'] = france5; ip['C7.telepoche.com'] = "rtp://@232.0.1.4:8200";
-		icon['C9.telepoche.com'] = tmc; ip['C9.telepoche.com'] = "rtp://@232.0.1.7:8200";
-		icon['C28.telepoche.com'] = france4; ip['C28.telepoche.com'] = "rtp://@232.0.1.9:8200";
-		icon['C193.telepoche.com'] = virgin17; ip['C193.telepoche.com'] = "rtp://@232.0.1.11:8200";
-		icon['C38.telepoche.com'] = w9; ip['C38.telepoche.com'] = "rtp://@232.0.1.43:8200";
-		icon['C169.telepoche.com'] = nrj12; ip['C169.telepoche.com'] = "rtp://@232.0.1.8:8200";
-		icon['C195.telepoche.com'] = gulli; ip['C195.telepoche.com'] = "rtp://@232.0.1.12:8200";
-		// TODO c'est quoi l'id de TV 5 monde? Ya pas dans Orange TV!
-		icon['C.telepoche.com'] = tv5monde; ip['C.telepoche.com'] = "rtp://@232.0.1.13:8200";
-	}
-*/
 	private static final String[][] p = { 
 		{ "C1.telepoche.com", "rtp://@232.0.1.17:8200"},
 		{ "C2.telepoche.com", "rtp://@232.0.1.1:8200"},
@@ -47,13 +28,13 @@ public class Channel implements Serializable {
 		{ "C4.telepoche.com", "rtp://@232.0.5.1:8200"},
 		{ "C5.telepoche.com", "rtp://@232.0.1.5:8200"},
 		{ "C6.telepoche.com", "rtp://@232.0.1.10:8200"},
-		{ "C7.telepoche.com", ""},
-		{ "C9.telepoche.com", ""},
+		{ "C7.telepoche.com", "rtp://@232.0.1.4:8200"},
+		{ "C9.telepoche.com", "rtp://@232.0.1.7:8200"},
 		{ "C28.telepoche.com", "rtp://@232.0.1.9:8200"},
-		{ "C193.telepoche.com", ""},
+		{ "C193.telepoche.com", "rtp://@232.0.1.11:8200"},
 		{ "C38.telepoche.com", "rtp://@232.0.1.43:8200"},
-		{ "C169.telepoche.com", ""},
-		{ "C195.telepoche.com", ""},
+		{ "C169.telepoche.com", "rtp://@232.0.1.8:8200"},
+		{ "C195.telepoche.com", "rtp://@232.0.1.12:8200"},
 	};
 	private static Map<String, String> playlist = new HashMap<String, String>();
 	static {

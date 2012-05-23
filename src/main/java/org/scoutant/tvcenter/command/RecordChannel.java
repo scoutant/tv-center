@@ -18,7 +18,8 @@ public class RecordChannel extends BaseCommand implements Command {
 		Channel c = App.model().guide.channel();
 		String url = c.url;
 		log.info("recording channel with name : " + c.name);
-//		Process.instance.vlc( ip+" --sout file/ps:/home/coutant/tele/"+channel.normalizedName+"-"+Model.instance.now+".mpeg");		
+//		Process.instance.vlc( ip+" --sout file/ps:/home/coutant/tele/"+channel.normalizedName+"-"+Model.instance.now+".mpeg");
+		// TODO normalize name for instance RTL 9 is with space.
 		ProcessBuilder pb = new ProcessBuilder("vlc", url, "--sout",  "file/ps:/home/coutant/tele/" + c.name + "-" + App.model().now +".mpeg");
 		try {
 			App.model().process = pb.start();

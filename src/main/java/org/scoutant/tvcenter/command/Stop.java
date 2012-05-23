@@ -14,6 +14,7 @@ public class Stop extends BaseCommand implements Command {
 		if (process==null) return;
 		process.destroy();
 		App.model().recording = false;
+		App.model().programRecording = null;
 	}
 
 }
